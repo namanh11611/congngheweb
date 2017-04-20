@@ -34,5 +34,6 @@ Route::group(['prefix'=>'admin'], function (){
         Route::get('add', ['as'=>'admin.user.getAdd', 'uses'=>'UserController@getAdd']);
         Route::get('edit', ['as'=>'admin.user.getEdit', 'uses'=>'UserController@getEdit']);
         Route::get('list', ['as'=>'admin.user.list', 'uses'=>'UserController@getList']);
+        Route::post('add', ['as'=>'admin.user.postAdd', 'uses'=>'UserController@postAdd']);
     });
 });

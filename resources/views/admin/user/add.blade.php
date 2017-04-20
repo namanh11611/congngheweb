@@ -10,7 +10,11 @@
     </div>
     <!-- /.col-lg-12 -->
     <div class="col-lg-7" style="padding-bottom:120px">
-        <form action="" method="POST">
+    @if(count($errors) > 0)
+      <h3 class="error"> {{'Lỗi dữ liệu nhập vào, vui lòng kiểm tra lại !'}}</h3>
+     @endif
+        <form action = "{!! route('admin.user.getAdd') !!}" method="POST">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
                 <label>Username</label>
                 <input class="form-control" name="txtUser" placeholder="Please Enter Username" />
@@ -30,10 +34,13 @@
             <div class="form-group">
                 <label>User Level</label>
                 <label class="radio-inline">
-                    <input name="rdoLevel" value="1" checked="" type="radio">Admin
+                    <input name="rdoLevel" value="1" checked="" type="radio">SuperAdmin
                 </label>
                 <label class="radio-inline">
-                    <input name="rdoLevel" value="2" type="radio">Member
+                    <input name="rdoLevel" value="2" type="radio">Admin
+                </label>
+                <label class="radio-inline">
+                    <input name="rdoLevel" value="3" type="radio">Member
                 </label>
             </div>
             <button type="submit" class="btn btn-default">User Add</button>
