@@ -7,6 +7,7 @@
  */
 namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
+use Illuminate\Http\Request;
 use App\Users;
 use Hash;
 
@@ -17,9 +18,10 @@ class UserController extends Controller
         return view('admin.user.add');
     }
 
-    public function getEdit()
+    public function getEdit($id)
     {
-        return view('admin.user.edit');
+        $data = Users::find($id);
+        return view('admin.user.edit',compact('data'));
     }
 
     public function getList()
@@ -44,5 +46,30 @@ class UserController extends Controller
         $user->save();
 
         return view('admin.user.add');
+    }
+
+    public function getDelete($id){
+        $user = Users::find($id);
+        $user->delete($id);
+        return redirect()->route('admin.user.list');
+    }
+
+    public function postEdit($id, Request $request){
+        $user = Users::find($id);
+        if($request->input('txtPass')){
+            $this->validate($request,[
+                    'txtRePass' => 'same:txtRePass'
+                ],
+                [
+                    'txtRePass.same' => 'Two Pass Dont Match'
+                ]);
+            $pass = $request->input('txtPass');
+            $user->password = Hash::make($pass);
+        }
+
+        $user->level = $request->rdoLevel;
+        $user->email = $request->txtEmail;
+        $user->save();
+
     }
 }
