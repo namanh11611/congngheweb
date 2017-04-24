@@ -16,8 +16,11 @@ Route::get('/', 'WelcomeController@index');
 Route::group(['prefix'=>'admin'], function (){
     Route::group(['prefix'=>'cate'], function (){
         Route::get('add', ['as'=>'admin.cate.getAdd', 'uses'=>'CateController@getAdd']);
-        Route::get('edit', ['as'=>'admin.cate.getEdit', 'uses'=>'CateController@getEdit']);
+        Route::post('add', ['as'=>'admin.cate.postAdd', 'uses'=>'CateController@postAdd']);
         Route::get('list', ['as'=>'admin.cate.list', 'uses'=>'CateController@getList']);
+        Route::get('delete/{$id}', ['as'=>'admin.cate.getDelete', 'uses'=>'CateController@getDelete']);
+        Route::get('edit/{$id}', ['as'=>'admin.cate.getEdit', 'uses'=>'CateController@getEdit']);
+        Route::get('edit/{$id}', ['as'=>'admin.cate.postEdit', 'uses'=>'CateController@postEdit']);
     });
 });
 

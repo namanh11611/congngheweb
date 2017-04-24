@@ -2,6 +2,15 @@
 @section('description', 'Cate')
 @section('author', 'Nam Anh')
 @section('content')
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{!! $error !!}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 <div class="row">
     <div class="col-lg-12">
         <h1 class="page-header">Category
@@ -10,12 +19,13 @@
     </div>
     <!-- /.col-lg-12 -->
     <div class="col-lg-7" style="padding-bottom:120px">
-        <form action="" method="POST">
+        <form action="{!! route('admin.cate.getAdd') !!}" method="POST">
+        <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
             <div class="form-group">
                 <label>Category Parent</label>
-                <select class="form-control">
+                <select class="form-control" name="sltParent">
                     <option value="0">Please Choose Category</option>
-                    <option value="">Tin Tức</option>
+                    <?php cate_parent($parent); ?>
                 </select>
             </div>
             <div class="form-group">
@@ -27,12 +37,12 @@
                 <input class="form-control" name="txtOrder" placeholder="Please Enter Category Order" />
             </div>
             <div class="form-group">
-                <label>Category Keywords</label>
-                <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
+                <label>Category Alias</label>
+                <input class="form-control" name="txtAlias" placeholder="Please Enter Category Keywords" />
             </div>
             <div class="form-group">
                 <label>Category Description</label>
-                <textarea class="form-control" rows="3"></textarea>
+                <textarea class="form-control" name="txtDescription" rows="3"></textarea>
             </div>
             <div class="form-group">
                 <label>Category Status</label>
