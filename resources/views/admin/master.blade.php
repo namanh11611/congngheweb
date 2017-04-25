@@ -115,6 +115,15 @@
                                 <li>
                                     <a href="{!! route('admin.user.getAdd') !!}">Add User</a>
                                 </li>
+                        <li>
+                            <a href="#"><i class="fa fa-users fa-fw"></i> Customer<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!! route('admin.user.list') !!}">List Customer</a>
+                                </li>
+                                <li>
+                                    <a href="{!! route('admin.user.getAdd') !!}">Add Customer</a>
+                                </li>
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
@@ -149,8 +158,6 @@
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="{!! url('admin/bower_components/metisMenu/dist/metisMenu.min.js') !!}"></script>
-
-    <script src="{!! url('admin/js/myscript.js') !!}"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="{!! url('admin/dist/js/sb-admin-2.js') !!}"></script>
