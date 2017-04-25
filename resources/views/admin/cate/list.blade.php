@@ -20,9 +20,11 @@
             </tr>
         </thead>
         <tbody>
+            <?php $stt = 0 ?>
             @foreach ($data as $item)
+             <?php $stt = $stt + 1 ?>
             <tr class="odd gradeX" align="center">
-                <td>1</td>
+                <td>{!! $stt !!}</td>
                 <td>{!! $item["name"] !!}</td>
                 <td>
                 @if ($item["parent_id"] == 0)
@@ -36,8 +38,8 @@
                    
                 </td>
       
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{!! URL::route('admin.cate.getDelete',$item['id']) !!}"> Delete</a></td>
-                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="!! URL::route('admin.cate.getEdit',$item['id']) !!">Edit</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return xacnhanxoa('Bạn Có Chắc Muốn Xóa Không')" href="{!! URL::route('admin.cate.getDelete',$item['id']) !!}"> Delete</a></td>
+                <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{!! URL::route('admin.cate.getEdit',$item['id']) !!}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>
