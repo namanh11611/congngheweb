@@ -41,3 +41,15 @@ Route::group(['prefix'=>'admin'], function (){
 
     });
 });
+
+
+Route::group(['prefix'=>'admin'], function (){
+    Route::group(['prefix'=>'customer'], function (){
+        Route::get('add', ['as'=>'admin.customer.getAdd', 'uses'=>'CusController@getAdd']);
+        Route::get('edit/{id}', ['as'=>'admin.customer.getEdit', 'uses'=>'CusController@getEdit']);
+        Route::get('list', ['as'=>'admin.customer.list', 'uses'=>'CusController@getList']);
+        Route::post('add', ['as'=>'admin.customer.postAdd', 'uses'=>'CusController@postAdd']);
+        Route::post('edit/{id}', ['as'=>'admin.customer.postEdit', 'uses'=>'CusController@postEdit']);
+        Route::get('delete/{id}', ['as'=>'admin.customer.getDelete', 'uses'=>'CusController@getDelete']);
+    });
+});

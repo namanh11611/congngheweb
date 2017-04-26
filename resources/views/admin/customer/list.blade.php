@@ -4,7 +4,7 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">User
+        <h1 class="page-header">Customer
             <small>List</small>
         </h1>
     </div>
@@ -13,22 +13,26 @@
         <thead>
             <tr align="center">
                 <th>ID</th>
-                <th>Username</th>
-                <th>Level</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Address</th>
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>
         </thead>
         <tbody>
-        @foreach($user as $item_user)
+        @foreach($customer as $item_customer)
             <tr class="odd gradeX" align="center">
-                <td>{!! $item_user["id"] !!}</td>
-                <td>{!! $item_user["username"] !!}</td>
-                <td>{!! $item_user["level"] !!}</td>
+                <td>{!! $item_customer["id"] !!}</td>
+                <td>{!! $item_customer["firs_name"] !!}</td>
+                <td>{!! $item_customer["last_name"] !!}</td>
+                <td>{!! $item_customer["phone_number"] !!}</td>
+                <td>{!! $item_customer["address"] !!}</td>
                 <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{!!
-                URL::route('admin.user.getDelete',$item_user['id']) !!}"> Delete</a></td>
+                URL::route('admin.customer.getDelete',$item_customer['id']) !!}"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{!!
-                URL::route('admin.user.getEdit',$item_user['id']) !!}">Edit</a></td>
+                URL::route('admin.customer.getEdit',$item_customer['id']) !!}">Edit</a></td>
             </tr>
             @endforeach
         </tbody>
