@@ -22,11 +22,12 @@
             <div class="form-group">
                 <label>Intro</label>
                 <textarea class="form-control" rows="3" name="txtIntro"></textarea>
+                <script type="text/javascript">ckeditor("txtIntro")</script>
             </div>
-            <div class="form-group">
-                <label>Content</label>
-                <textarea class="form-control" rows="3" name="txtContent"></textarea>
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<label>Content</label>--}}
+                {{--<textarea class="form-control" rows="3" name="txtContent"></textarea>--}}
+            {{--</div>--}}
             <div class="form-group">
                 <label>Images</label>
                 <input type="file" name="fImages">
