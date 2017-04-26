@@ -128,18 +128,7 @@
                                     <a href="{!! route('admin.customer.getAdd') !!}">Add Customer</a>
                                 </li>
                             </ul>
-                             <!-- /.nav-second-level -->
-
-                        </li>
-                        <li>
-                            <a href="#"><i class="fa fa-users fa-fw"></i>Member<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="{!! route('admin.product.list') !!}">List Member</a>
-                                </li>
-                                <li>
-                                    <a href="{!! route('admin.product.getAdd') !!}">Add Member</a>
-                                </li>
+                             
                             </ul>
                         </li>
                     </ul>
