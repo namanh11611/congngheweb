@@ -36,6 +36,7 @@ class CusController extends Controller
         //return $user;
        return view('admin.customer.list',compact('customer'));
     }
+<<<<<<< HEAD
 
     public function getEdit($id)
     {
@@ -65,4 +66,6 @@ class CusController extends Controller
        return view('admin.customer.list',compact('customer'));
 
     }
+=======
+>>>>>>> 637970dab95fa97fdb6091913e9fc9b6288cf574
 }
