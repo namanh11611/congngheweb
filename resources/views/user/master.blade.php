@@ -8,7 +8,6 @@
     <meta name="author" content="@yield('author')">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300italic,400italic,600,600italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
-
     <link href="{!! url('user/css/bootstrap.css') !!}" rel="stylesheet">
     <link href="{!! url('user/css/bootstrap-responsive.css') !!}" rel="stylesheet">
     <link href="{!! url('user/css/style.css') !!}" rel="stylesheet">
