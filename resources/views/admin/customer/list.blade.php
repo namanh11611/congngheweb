@@ -29,8 +29,7 @@
                 <td>{!! $item_customer["last_name"] !!}</td>
                 <td>{!! $item_customer["phone_number"] !!}</td>
                 <td>{!! $item_customer["address"] !!}</td>
-                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{!!
-                URL::route('admin.customer.getDelete',$item_customer['id']) !!}"> Delete</a></td>
+                <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a onclick="return xacnhanxoa('Bạn Có Chắc Muốn Xóa Không')" href="{!! URL::route('admin.customer.getDelete',$item_customer['id']) !!}"> Delete</a></td>
                 <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{!!
                 URL::route('admin.customer.getEdit',$item_customer['id']) !!}">Edit</a></td>
             </tr>

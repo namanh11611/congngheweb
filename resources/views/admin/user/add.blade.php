@@ -10,11 +10,7 @@
     </div>
     <!-- /.col-lg-12 -->
     <div class="col-lg-7" style="padding-bottom:120px">
-    @if(count($errors) > 0)
-    <div class="alert alert-danger">
-      <h3 class="error"> {{'Lỗi dữ liệu nhập vào, vui lòng kiểm tra lại !'}}</h3>
-    </div>
-     @endif
+    @include('admin.blocks.error')
         <form action = "{!! route('admin.user.getAdd') !!}" method="POST">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">

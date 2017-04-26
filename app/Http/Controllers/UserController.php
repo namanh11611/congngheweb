@@ -9,6 +9,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 use App\Users;
+use App\Members;
+use App\Customers;
 use Hash;
 
 class UserController extends Controller
