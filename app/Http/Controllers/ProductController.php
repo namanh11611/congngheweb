@@ -9,11 +9,20 @@
 namespace App\Http\Controllers;
 
 
+use App\category;
+use App\Http\Requests\ProductRequest;
+
 class ProductController extends Controller
 {
     public function getAdd()
     {
-        return view('admin.product.add');
+        $cate = category::select('name', 'id', 'parent_id')->get()->toArray();
+        return view('admin.product.add', compact('cate'));
+    }
+
+    public function postAdd(ProductRequest $request)
+    {
+//        $produtc = new Product
     }
 
     public function getEdit()
