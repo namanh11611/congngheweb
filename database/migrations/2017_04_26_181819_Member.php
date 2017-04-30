@@ -15,8 +15,10 @@ class Member extends Migration
     {
         Schema::create('Members', function(Blueprint $table){
             $table->increments('id');
-            $table->integer('user_id');
-            $table->integer('customer_id');
+            $table->integer('user_id')->unsigned();
+            $table->integer('customer_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('customer_id')->references('id')->on('customers');
         });
     }
 

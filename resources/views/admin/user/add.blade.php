@@ -30,6 +30,22 @@
                 <input type="email" class="form-control" name="txtEmail" placeholder="Please Enter Email" />
             </div>
             <div class="form-group">
+                <label>First Name</label>
+                <input class="form-control" name="txtFirstName" placeholder="Please Enter FistName" />
+            </div>
+            <div class="form-group">
+                <label>Last Name</label>
+                <input class="form-control" name="txtLastName" placeholder="Please Enter LastName" />
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input class="form-control" name="txtPhoneNumber" placeholder="Please Enter Phonebumer" />
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <input class="form-control" name="txtAddress" placeholder="Please Enter Username" />
+            </div>
+            <div class="form-group">
                 <label>User Level</label>
                 <label class="radio-inline">
                     <input name="rdoLevel" value="1" checked="" type="radio">SuperAdmin

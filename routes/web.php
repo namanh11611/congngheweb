@@ -1,5 +1,6 @@
 <?php
-
+use App\Members;
+use App\Xxx;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,4 +57,12 @@ Route::group(['prefix'=>'admin'], function (){
         Route::post('edit/{id}', ['as'=>'admin.customer.postEdit', 'uses'=>'CusController@postEdit']);
         Route::get('delete/{id}', ['as'=>'admin.customer.getDelete', 'uses'=>'CusController@getDelete']);
     });
+});
+
+Route::get('/addMem', function(){
+    $member = new Xxx();
+    $member->user_id = 1;
+    $member->name = 'tu';
+    $member->save();
+    return "save member !";
 });
