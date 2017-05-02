@@ -60,9 +60,15 @@ class UserController extends Controller
         $user->save();
         $customer->save();
 
+        $newUser = Users::where('username','=',$username)->first();
+        $newCustomer = Customers::where('phone_number','=',$phone_number)->first();
         
+        $member->customer_id = $newCustomer["id"];
+        $member->user_id = $newUser["id"];
 
-        //return view('admin.user.add');
+        $member->save();
+
+        return view('admin.user.add');
     }
 
     public function getDelete($id){
