@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Member extends Migration
+class OrderOutput extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class Member extends Migration
      */
     public function up()
     {
-        Schema::create('Members', function(Blueprint $table){
+        Schema::create('orders_output',function(Blueprint $table){
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
+            $table->smallInteger('status');
+            $table->string('order_address');
             $table->integer('customer_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('customer_id')->references('id')->on('customers');
+            $table->foreign('customer_id')->references('id')->on('Customers')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 
@@ -29,6 +30,6 @@ class Member extends Migration
      */
     public function down()
     {
-        Schema::drop('Members');
+        //
     }
 }

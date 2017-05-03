@@ -10,19 +10,42 @@ namespace App\Http\Controllers;
 
 
 use App\category;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductRequest;
+
+use App\LogPrice;
+use App\Product;
+use Auth;
+use App\ProductImages;
+use Input, File;
+use Request;
 
 class ProductController extends Controller
 {
     public function getAdd()
     {
         $cate = category::select('name', 'id', 'parent_id')->get()->toArray();
+//        dump($cate);
         return view('admin.product.add', compact('cate'));
     }
 
     public function postAdd(ProductRequest $request)
     {
-//        $produtc = new Product
+        echo "Hello";
+//        $fileName = $request->file('fImages')->getClientOriginalName();
+//        $product = new Product();
+//        $product->name = $request->txtName;
+//        $product->alias = changeTitle($request->txtName);
+//        $product->description = $request->txtDescription;
+//        $product->price = $request->txtPrice;
+//        $product->image = $fileName;
+//        $product->quantity = $request->txtQuantity;
+//        $product->cate_id = $request->sltParent;
+
+//        dump($product);
+//        $request->file('fImages')->move('resources/upload/', $fileName);
+//        $product->save();
     }
 
     public function getEdit()

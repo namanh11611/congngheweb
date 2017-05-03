@@ -35,10 +35,22 @@ class UserController extends Controller
 
     public function postAdd(UserRequest $request){
         $user = new Users();
+        $customer = new Customers();
+        $member = new Members();
         $username = $request->txtUser;
         $password = Hash::make($request->txtPass);
         $email = $request->txtEmail;
         $level = $request->rdoLevel;
+
+        $first_name = $request->txtFirstName;
+        $last_name = $request->txtLastName;
+        $phone_number = $request->txtPhoneNumber;
+        $address = $request->txtAddress;
+
+        $customer->firs_name = $first_name;
+        $customer->last_name = $last_name;
+        $customer->phone_number = $phone_number;
+        $customer->address = $address;
 
         $user->username = $username;
         $user->password = $password;
@@ -46,6 +58,15 @@ class UserController extends Controller
         $user->level = $level;
 
         $user->save();
+        $customer->save();
+
+        $newUser = Users::where('username','=',$username)->first();
+        $newCustomer = Customers::where('phone_number','=',$phone_number)->first();
+        
+        $member->customer_id = $newCustomer["id"];
+        $member->user_id = $newUser["id"];
+
+        $member->save();
 
         return view('admin.user.add');
     }

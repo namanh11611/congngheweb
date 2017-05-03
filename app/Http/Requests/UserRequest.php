@@ -27,7 +27,11 @@ class UserRequest extends FormRequest
         'txtUser' => 'required |unique:users,username',
         'txtPass' => 'required',
         'txtRePass' => 'required|same:txtPass',
-        'txtEmail' => 'required'
+        'txtEmail' => 'required',
+        'txtFirstName' => 'required',
+        'txtLastName' => 'required',
+        'txtPhoneNumber' => 'required',
+        'txtAddress' => 'required'
         ];
     }
 
@@ -38,7 +42,12 @@ class UserRequest extends FormRequest
             'txtPass.required' => 'Please Enter Password',
             'txtRePass.required' => 'Please Enter Password',
             'txtRePass.same' => 'Two Pass Dont Match',
-            'txtEmail.required' => 'Please Enter Your Email'
+            'txtEmail.required' => 'Please Enter Your Email',
+            'txtFirstName.required' => 'Please Enter FirstName',
+            'txtLastName.required' => 'Please Enter LastName',
+            'txtRePass.required' => 'Please Enter Password',
+            'txtPhoneNumber.required' => 'Please Enter Phone Number',
+            'txtAddress.required' => 'Please Enter Address'
         ];
     }
 }

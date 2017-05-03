@@ -1,5 +1,6 @@
 <?php
-
+use App\Members;
+use App\Xxx;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -57,6 +58,7 @@ Route::group(['prefix'=>'admin'], function (){
         Route::get('delete/{id}', ['as'=>'admin.customer.getDelete', 'uses'=>'CusController@getDelete']);
     });
 });
+<<<<<<< HEAD
 Route::get('loai-san-pham/{id}/{tenloai}',['as'=>'loaisanpham','uses'=>'WelcomeController@loaisanpham']);
 Route::get('lien-he',['as'=>'getLienhe','uses'=>'WelcomeController@get_lienhe']);
 // Route::post('lien-he',['as'=>'postLienhe','uses'=>'WelcomeController@post_lienhe']);
@@ -64,3 +66,13 @@ Route::get('mua-hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'WelcomeControl
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
+=======
+
+Route::get('/addMem', function(){
+    $member = new Xxx();
+    $member->user_id = 1;
+    $member->name = 'tu';
+    $member->save();
+    return "save member !";
+});
+>>>>>>> dd1a5740c20f2873da29fdedca080da03e0093ad

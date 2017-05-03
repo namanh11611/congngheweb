@@ -13,41 +13,41 @@
         <form action="" method="POST">
             <div class="form-group">
                 <label>Name</label>
-                <input class="form-control" name="txtName" placeholder="Please Enter Username" />
+                <input class="form-control" name="txtName" placeholder="Please Enter The Product Name" />
             </div>
             <div class="form-group">
                 <label>Price</label>
-                <input class="form-control" name="txtPrice" placeholder="Please Enter Password" />
+                <input class="form-control" name="txtPrice" placeholder="Please Enter The Product Price" />
             </div>
-            <div class="form-group">
-                <label>Intro</label>
-                <textarea class="form-control" rows="3" name="txtIntro"></textarea>
-            </div>
-            <div class="form-group">
-                <label>Content</label>
-                <textarea class="form-control" rows="3" name="txtContent"></textarea>
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<label>Intro</label>--}}
+                {{--<textarea class="form-control" rows="3" name="txtIntro"></textarea>--}}
+            {{--</div>--}}
+            {{--<div class="form-group">--}}
+                {{--<label>Content</label>--}}
+                {{--<textarea class="form-control" rows="3" name="txtContent"></textarea>--}}
+            {{--</div>--}}
             <div class="form-group">
                 <label>Images</label>
                 <input type="file" name="fImages">
             </div>
             <div class="form-group">
-                <label>Product Keywords</label>
-                <input class="form-control" name="txtOrder" placeholder="Please Enter Category Keywords" />
+                <label>Quantity</label>
+                <input class="form-control" name="txtQuantity" placeholder="Please Enter The Number Of Products" value="{!! old('txtQuantity') !!}"/>
             </div>
             <div class="form-group">
                 <label>Product Description</label>
                 <textarea class="form-control" rows="3"></textarea>
             </div>
-            <div class="form-group">
-                <label>Product Status</label>
-                <label class="radio-inline">
-                    <input name="rdoStatus" value="1" checked="" type="radio">Visible
-                </label>
-                <label class="radio-inline">
-                    <input name="rdoStatus" value="2" type="radio">Invisible
-                </label>
-            </div>
+            {{--<div class="form-group">--}}
+                {{--<label>Product Status</label>--}}
+                {{--<label class="radio-inline">--}}
+                    {{--<input name="rdoStatus" value="1" checked="" type="radio">Visible--}}
+                {{--</label>--}}
+                {{--<label class="radio-inline">--}}
+                    {{--<input name="rdoStatus" value="2" type="radio">Invisible--}}
+                {{--</label>--}}
+            {{--</div>--}}
             <button type="submit" class="btn btn-default">Product Edit</button>
             <button type="reset" class="btn btn-default">Reset</button>
         </form>
