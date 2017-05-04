@@ -1,6 +1,5 @@
 <?php
 use App\Members;
-use App\Xxx;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -66,7 +65,6 @@ Route::get('mua-hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'WelcomeControl
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
-
 
 Route::get('/addMem', function(){
     $member = new Xxx();

@@ -94,7 +94,7 @@
                                         <a class="productname" href="product.html">{!! $item_product_cate->name !!}</a>
                                         <div class="thumbnail">
                                             <span class="sale tooltip-test">Sale</span>
-                                            <a href="#"><img alt="" src="{{ asset('resources/upload/'.$item_product_cate->image)}}"></a>
+                                            <a href="#"><img alt="" src="{{ asset('../resources/upload/'.$item_product_cate->image)}}"></a>
                                             <div class="pricetag">
                                                 <span class="spiral"></span><a href="{!! url('mua-hang',[$item_product_cate->id,$item_product_cate->alias]) !!}" class="productcart">ADD TO CART</a>
                                                 <div class="price">

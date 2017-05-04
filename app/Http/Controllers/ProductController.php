@@ -32,20 +32,23 @@ class ProductController extends Controller
 
     public function postAdd(ProductRequest $request)
     {
-        echo "Hello";
-//        $fileName = $request->file('fImages')->getClientOriginalName();
-//        $product = new Product();
-//        $product->name = $request->txtName;
-//        $product->alias = changeTitle($request->txtName);
-//        $product->description = $request->txtDescription;
-//        $product->price = $request->txtPrice;
-//        $product->image = $fileName;
-//        $product->quantity = $request->txtQuantity;
-//        $product->cate_id = $request->sltParent;
+        $fileName = $request->file('fImages')->getClientOriginalName();
+        $product = new Product();
+        $product->name = $request->txtName;
+        $product->alias = changeTitle($request->txtName);
+        $product->description = $request->txtDescription;
+        $product->price = $request->txtPrice;
+        $product->image = $fileName;
+        $product->quantity = $request->txtQuantity;
+        $product->cate_id = $request->sltParent;
 
+//        echo "";
 //        dump($product);
-//        $request->file('fImages')->move('resources/upload/', $fileName);
-//        $product->save();
+
+//        echo base_path();
+        $request->file('fImages')->move('..\resources\upload',$fileName);
+        $product->save();
+//        return redirect()->route('admin.product.list')->with(['flash_level'=>'success' ,'flash_message'=>'Success !! Complete Add Product']);
     }
 
     public function getEdit()
