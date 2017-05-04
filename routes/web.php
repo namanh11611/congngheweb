@@ -65,3 +65,12 @@ Route::get('mua-hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'WelcomeControl
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
+
+Route::get('/addMem', function(){
+    $member = new Xxx();
+    $member->user_id = 1;
+    $member->name = 'tu';
+    $member->save();
+    return "save member !";
+});
+

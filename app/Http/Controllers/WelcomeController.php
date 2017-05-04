@@ -36,13 +36,16 @@ class WelcomeController extends Controller
     public function muahang($id){
         $product_buy = DB::table('products')->where('id',$id)->first();
         Cart::add(array('id'=>$id,'name'=>$product_buy->name,'qty'=>1,'price'=>$product_buy->price,'options'=>array('img'=>$product_buy->image)));
+
+        // echo $product_buy->price;
         $content = Cart::content();
         return redirect()->route('giohang');
     }
     public function giohang(){
         $content = Cart::content();
-        $total = Cart::total();
-        return view('user.pages.shopping',compact('content','total'));
+        $total1 = Cart::total();
+    
+        return view('user.pages.shopping',compact('content','total1'));
     }
     public function xoasanpham ($id){
         Cart::remove($id);

@@ -12,7 +12,7 @@
             </li>
             <li class="active"> Shopping Cart</li>
         </ul>
-        <h1 class="heading1"><span class="maintext"> Shopping Cart</span><span class="subtext"> All items in your  Shopping Cart</span></h1>
+        <h1 class="heading1"><span class="maintext">Shopping Cart</span><span class="subtext"> All items in your  Shopping Cart</span></h1>
         <!-- Cart-->
         <div class="cart-info">
             <table class="table table-striped table-bordered">
@@ -50,7 +50,7 @@
                        
                         <tr>
                             <td><span class="extra bold totalamout">Total :</span></td>
-                            <td><span class="bold totalamout">{!! $total !!}</span></td>
+                            <td><span class="bold totalamout">{!! $total1 !!}</span></td>
                         </tr>
                     </table>
                     <input type="submit" value="CheckOut" class="btn btn-orange pull-right">
