@@ -24,20 +24,26 @@ class ProductRequest extends FormRequest
     public function rules()
     {
         return [
-            'sltParent' => 'required',
-//            'txtName'   => 'required|unique:products, name',
-            'fImages'   => 'required|image'
+            'sltParent'         => 'required',
+            'txtName'           => 'required|unique:products,name',
+            'txtPrice'          => 'required',
+            'fImages'           => 'required|image',
+            'txtQuantity'       => 'required',
+            'txtDescription'    => 'required'
         ];
     }
 
     public function messages()
     {
         return [
-            'sltParent.required'    =>  'Please Choose Category',
-//            'txtName.required'      =>  'Please Enter Product Name',
-//            'txtName.unique'        =>  'Product Name Is Exist',
-            'fImages.required'      =>  'Please Choose Images',
-            'fImages.image'         =>  'This File Is Not Image'
+            'sltParent.required'        =>  'Please Choose Category',
+            'txtName.required'          =>  'Please Enter Product Name',
+            'txtName.unique'            =>  'Product Name Is Exist',
+            'txtPrice.required'         =>  'Please Enter Product Price',
+            'fImages.required'          =>  'Please Choose Images',
+            'fImages.image'             =>  'This File Is Not Image',
+            'txtQuantity.required'      =>  'Please Enter Number Of Products',
+            'txtDescription.required'   =>  'Please Enter Description'
         ];
     }
 }
