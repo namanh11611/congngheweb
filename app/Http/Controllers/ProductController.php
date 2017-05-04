@@ -45,9 +45,9 @@ class ProductController extends Controller
 //        echo "";
 //        dump($product);
 
-        echo base_path();
+//        echo base_path();
         $request->file('fImages')->move('..\resources\upload',$fileName);
-//        $product->save();
+        $product->save();
 //        return redirect()->route('admin.product.list')->with(['flash_level'=>'success' ,'flash_message'=>'Success !! Complete Add Product']);
     }
 
