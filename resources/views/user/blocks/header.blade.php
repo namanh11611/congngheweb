@@ -11,7 +11,7 @@
                             <ul class="nav">
                                 <li><a class="home active" href="{!! url('/') !!}">Home</a>
                                 </li>
-                                <li><a class="myaccount" href="#">My Account</a>
+                                <li><a class="myaccount" href="#">Login</a>
                                 </li>
                                 <li><a class="shoppingcart" href="#">Shopping Cart</a>
                                 </li>

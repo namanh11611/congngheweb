@@ -59,10 +59,7 @@ Route::group(['prefix'=>'admin'], function (){
     });
 });
 
-Route::get('/addMem', function(){
-    $member = new Xxx();
-    $member->user_id = 1;
-    $member->name = 'tu';
-    $member->save();
-    return "save member !";
+
+Route::get('login', function (){
+    return view('user.pages.register');
 });
