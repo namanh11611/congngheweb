@@ -19,21 +19,11 @@
                 <div class="sidewidt">
                     <h2 class="heading2"><span>Categories</span></h2>
                     <ul class="nav nav-list categories">
+                        @foreach($menu_cate as $item_cate)
                         <li>
-                            <a href="category.html">Men Accessories</a>
+                            <a href="{!! URL('loai-san-pham',[$item_cate->id,$item_cate->alias]) !!}">{!! $item_cate->name !!}</a>
                         </li>
-                        <li>
-                            <a href="category.html">Women Accessories</a>
-                        </li>
-                        <li>
-                            <a href="category.html">Computers </a>
-                        </li>
-                        <li>
-                            <a href="category.html">Home and Furniture</a>
-                        </li>
-                        <li>
-                            <a href="category.html">Others</a>
-                        </li>
+                        @endforeach()
                     </ul>
                 </div>
                 <!--  Best Seller -->
@@ -64,24 +54,14 @@
                 <div class="sidewidt">
                     <h2 class="heading2"><span>Latest Products</span></h2>
                     <ul class="bestseller">
+                    @foreach($lasted_product as $item_lasted_product)
                         <li>
-                            <img width="50" height="50" src="img/prodcut-40x40.jpg" alt="product" title="product">
-                            <a class="productname" href="product.html"> Product Name</a>
-                            <span class="procategory">Women Accessories</span>
-                            <span class="price">$250</span>
+                            <img width="50" height="50" src="{{asset('resources/upload/'.$item_lasted_product->image) }}" alt="product" title="product">
+                            <a class="productname" href="product.html">{!! $item_lasted_product->name !!}</a>
+                            <span class="procategory">{!! $name_cate->name !!}</span>
+                            <span class="price">{!! $item_lasted_product->price !!}</span>
                         </li>
-                        <li>
-                            <img width="50" height="50" src="img/prodcut-40x40.jpg" alt="product" title="product">
-                            <a class="productname" href="product.html"> Product Name</a>
-                            <span class="procategory">Electronics</span>
-                            <span class="price">$250</span>
-                        </li>
-                        <li>
-                            <img width="50" height="50" src="img/prodcut-40x40.jpg" alt="product" title="product">
-                            <a class="productname" href="product.html"> Product Name</a>
-                            <span class="procategory">Electronics</span>
-                            <span class="price">$250</span>
-                        </li>
+                        @endforeach()
                     </ul>
                 </div>
                 <!--  Must have -->
@@ -109,145 +89,37 @@
                             <!-- Category-->
                             <section id="categorygrid">
                                 <ul class="thumbnails grid">
+                                @foreach($product_cate as $item_product_cate)
                                     <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
+                                        <a class="productname" href="product.html">{!! $item_product_cate->name !!}</a>
                                         <div class="thumbnail">
                                             <span class="sale tooltip-test">Sale</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
+                                            <a href="#"><img alt="" src="{{ asset('resources/upload/'.$item_product_cate->image)}}"></a>
                                             <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
+                                                <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
                                                 <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
+                                                    <div class="pricenew">{!! number_format($item_product_cate->price,0,",",".") !!}</div>
+                                                    <div class="priceold"></div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <span class="sale tooltip-test">Sale</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <span class="sale tooltip-test">Sale</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <span class="sale tooltip-test">Sale</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <span class="offer tooltip-test" >Offer</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <a href="#"><img alt="" src="img/product2.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <span class="sale tooltip-test">Sale</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <span class="offer tooltip-test" >Offer</span>
-                                            <a href="#"><img alt="" src="img/product1.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                    <li class="span3">
-                                        <a class="prdocutname" href="product.html">Product Name Here</a>
-                                        <div class="thumbnail">
-                                            <a href="#"><img alt="" src="img/product2.jpg"></a>
-                                            <div class="pricetag">
-                                                <span class="spiral"></span><a href="#" class="productcart">ADD TO CART</a>
-                                                <div class="price">
-                                                    <div class="pricenew">$4459.00</div>
-                                                    <div class="priceold">$5000.00</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                    </li> 
+                                    @endforeach()
+                                </ul>            
                                 <div class="pagination pull-right">
                                     <ul>
-                                        <li><a href="#">Prev</a>
+                                        @if($product_cate->currentPage() != 1)
+                                        <li><a href="{!! str_replace('/?','?',$product_cate->url($product_cate->currentPage() - 1)) !!}">Prev</a>
+                                        @endif
+                                        @for($i = 1; $i <= $product_cate->lastPage();$i = $i +1)
                                         </li>
-                                        <li class="active">
-                                            <a href="#">1</a>
+                                        <li class="{!! ($product_cate->currentPage() == $i) ? 'active' : '' !!}">
+                                            <a href="{!! str_replace('/?','?',$product_cate->url($i)) !!}">{!! $i !!}</a>
                                         </li>
-                                        <li><a href="#">2</a>
-                                        </li>
-                                        <li><a href="#">3</a>
-                                        </li>
-                                        <li><a href="#">4</a>
-                                        </li>
-                                        <li><a href="#">Next</a>
+                                        @endfor
+                                        @if ($product_cate->currentPage() != $product_cate->lastPage())
+                                        <li><a href="{!! str_replace('/?','?',$product_cate->url($product_cate->currentPage() + 1)) !!}">Next</a>
+                                        @endif
                                         </li>
                                     </ul>
                                 </div>
