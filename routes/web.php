@@ -65,6 +65,7 @@ Route::get('mua-hang/{id}/{tensanpham}',['as'=>'muahang','uses'=>'WelcomeControl
 Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
+Route::get('chi-tiet-san-pham/{id}/{tenloai}',['as'=>'chitietsanpham','uses'=>'WelcomeController@chitietsanpham']);
 
 Route::get('/addMem', function(){
     $member = new Xxx();

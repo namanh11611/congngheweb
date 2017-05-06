@@ -56,7 +56,7 @@
                     <ul class="bestseller">
                     @foreach($lasted_product as $item_lasted_product)
                         <li>
-                            <img width="50" height="50" src="{{asset('resources/upload/'.$item_lasted_product->image) }}" alt="product" title="product">
+                            <img width="50" height="50" src="{{asset('../resources/upload/'.$item_lasted_product->image) }}" alt="product" title="product">
                             <a class="productname" href="product.html">{!! $item_lasted_product->name !!}</a>
                             <span class="procategory">{!! $name_cate->name !!}</span>
                             <span class="price">{!! $item_lasted_product->price !!}</span>
