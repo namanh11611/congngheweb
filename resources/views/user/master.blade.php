@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Trang chủ</title>
+    <title>Home Page</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="@yield('description')">
     <meta name="author" content="@yield('author')">
@@ -67,10 +67,10 @@
                 <div class="span3 contact">
                     <h2>Contact Us </h2>
                     <ul>
-                        <li class="phone"> +123 456 7890, +123 456 7890</li>
-                        <li class="mobile"> +123 456 7890, +123 456 78900</li>
-                        <li class="email"> test@test.com</li>
-                        <li class="email"> test@test.com</li>
+                        <li class="phone"> 096 3826 128, 096 3826 128</li>
+                        <li class="mobile"> 096 3826128, 096 3826 128</li>
+                        <li class="email"> congngheweb@gmail.com</li>
+                        <li class="email"> congngheweb@gmail.com</li>
                     </ul>
                 </div>
                 <div class="span3 twitter">
@@ -110,7 +110,7 @@
         <div class="container">
             <div class="row">
                 <div class="span6"> All images are copyright to their owners.</div>
-                <div class="span6 textright"> ShopSimple @ 2012</div>
+                <div class="span6 textright"> OnlineShopping @ 2017</div>
             </div>
         </div>
     </section>

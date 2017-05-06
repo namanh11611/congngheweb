@@ -12,24 +12,31 @@ use App\Users;
 use App\Members;
 use App\Customers;
 use Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function getAdd()
+    public function getAdd($user=null)
     {
+        if(Auth::check()){
+            return view('admin.user.add')->with('adminLog',Auth::user());
+        }
         return view('admin.user.add');
     }
 
     public function getEdit($id)
     {
         $data = Users::find($id);
+        if(Auth::check()){
+            return view('admin.user.edit',compact('data'))->with('adminLog',Auth::user());
+        }
         return view('admin.user.edit',compact('data'));
     }
 
     public function getList()
     {
+
         $user = Users::select('id','username','level')->orderBy('id','DESC')->get()->toArray();
-        //return $user;
        return view('admin.user.list',compact('user'));
     }
 
@@ -67,13 +74,18 @@ class UserController extends Controller
         $member->user_id = $newUser["id"];
 
         $member->save();
-
+        if(Auth::check()){
+            return view('admin.user.add')->with('adminLog',Auth::user());
+        }
         return view('admin.user.add');
     }
 
     public function getDelete($id){
         $user = Users::find($id);
         $user->delete($id);
+        if(Auth::check()){
+            return redirect()->route('admin.user.list')->with('adminLog',Auth::user());
+        }
         return redirect()->route('admin.user.list');
     }
 
@@ -93,6 +105,9 @@ class UserController extends Controller
         $user->level = $request->rdoLevel;
         $user->email = $request->txtEmail;
         $user->save();
+
+        $user = Users::select('id','username','level')->orderBy('id','DESC')->get()->toArray();
+        return view('admin.user.list',compact('user'));
 
     }
 }
