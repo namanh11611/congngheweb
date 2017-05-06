@@ -13,7 +13,7 @@
                 <a class="prdocutname" href="product.html">{!! $item->name !!}</a>
                 <div class="thumbnail">
                     <span class="sale tooltip-test">Sale</span>
-                    <a href="#"><img alt="" src="{!! asset('resources/upload/'.$item->image) !!}"></a>
+                    <a href="#"><img alt="" src="{!! asset('../resources/upload/'.$item->image) !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
                         <div class="price">
@@ -89,6 +89,7 @@
                 </div>
             </li>
             @endforeach
+            
         </ul>
     </div>
 </section>

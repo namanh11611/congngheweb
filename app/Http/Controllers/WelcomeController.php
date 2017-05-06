@@ -7,12 +7,28 @@
  */
 namespace App\Http\Controllers;
 use DB,Cart;
+use Illuminate\Support\Facades\Auth;
+use View;
 class WelcomeController extends Controller
 {
+    function __construct(){
+        if(Auth::check()){
+            //view()->share('userLogined',Auth::user());
+            //view('user.pages.home')->with('userLogined',Auth::user());
+        }else{
+
+        }
+    }
+
     public function index()
     {
+        //Auth::logout();
         $product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->skip(0)->take(4)->get();
         //echo "Welcome";
+        if(Auth::check()){
+            return view('user.pages.home',compact('product'))->with('userLogined',Auth::user());
+            View::share('userLogined',Auth::user());
+        }
         return view('user.pages.home',compact('product'));
     }
     public function loaisanpham($id){
@@ -21,6 +37,9 @@ class WelcomeController extends Controller
     	$menu_cate = DB::table('category')->select('id','name','alias')->where('parent_id',$cate->parent_id)->get();
     	$name_cate = DB::table('category')->select('name')->where('id',$id)->first();
     	$lasted_product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->take(3)->get();
+        if (Auth::check()){
+            return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'))->with('userLogined',Auth::user());
+        }
     	return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'));
     }
     // public function chitietsanpham($id){
@@ -49,6 +68,9 @@ class WelcomeController extends Controller
     }
     public function xoasanpham ($id){
         Cart::remove($id);
+        if(Auth::check()){
+            return redirect()->route('giohang')->with('userLogined',Auth::user());
+        }
         return redirect()->route('giohang');
     }
     public function capnhat(){

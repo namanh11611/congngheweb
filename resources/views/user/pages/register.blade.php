@@ -16,32 +16,39 @@
             <!-- Register Account-->
             <div class="span9">
                 <h1 class="heading1"><span class="maintext">Register Account</span><span class="subtext">Register Your details with us</span></h1>
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="" method="POST">
                     <h3 class="heading3">Your Personal Details</h3>
                     <div class="registerbox">
                         <fieldset>
+                        <div class="control-group">
+                                <label class="control-label"><span class="red">*</span> User Name:</label>
+                                <div class="controls">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                    <input type="text"  class="input-xlarge" name="txtUsername">
+                                </div>
+                            </div>
                             <div class="control-group">
                                 <label class="control-label"><span class="red">*</span> First Name:</label>
                                 <div class="controls">
-                                    <input type="text"  class="input-xlarge">
+                                    <input type="text"  class="input-xlarge" name="txtFirstName">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label"><span class="red">*</span> Last Name:</label>
                                 <div class="controls">
-                                    <input type="text"  class="input-xlarge">
+                                    <input type="text"  class="input-xlarge" name="txtLastName">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label"><span class="red">*</span> Email:</label>
                                 <div class="controls">
-                                    <input type="text"  class="input-xlarge">
+                                    <input type="text"  class="input-xlarge" name="txtEmail">
                                 </div>
                             </div>
                             <div class="control-group">
                                 <label class="control-label"><span class="red">*</span> Telephone:</label>
                                 <div class="controls">
-                                    <input type="text"  class="input-xlarge">
+                                    <input type="text"  class="input-xlarge" name="txtPhoneNumber">
                                 </div>
                             </div>
                             <div class="control-group">
@@ -58,13 +65,13 @@
                             <div class="control-group">
                                 <label  class="control-label"><span class="red">*</span> Password:</label>
                                 <div class="controls">
-                                    <input type="text"  class="input-xlarge">
+                                    <input type="password"  class="input-xlarge" name="txtPassword">
                                 </div>
                             </div>
                             <div class="control-group">
-                                <label  class="control-label"><span class="red">*</span> LPassword Confirm::</label>
+                                <label  class="control-label"><span class="red">*</span> Password Confirm::</label>
                                 <div class="controls">
-                                    <input type="text"  class="input-xlarge">
+                                    <input type="password"  class="input-xlarge" name="txtRePass">
                                 </div>
                             </div>
                         </fieldset>
@@ -75,7 +82,7 @@
                         </label>
                         I have read and agree to the <a href="#" >Privacy Policy</a>
                         &nbsp;
-                        <input type="Submit" class="btn btn-orange" value="Continue">
+                        <input type="Submit" class="btn btn-orange" value="Register">
                     </div>
                 </form>
                 <div class="clearfix"></div>

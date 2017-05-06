@@ -12,11 +12,18 @@ use App\Users;
 use App\Members;
 use App\Customers;
 use Hash;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function getAdd()
+    public function getAdd($user=null)
     {
+        // if($user == null){
+        //     return "You are not login!";
+        // }
+        // if (user['level'] > 2){
+        //     return "You are not admin!";
+        // }
         return view('admin.user.add');
     }
 
@@ -28,8 +35,8 @@ class UserController extends Controller
 
     public function getList()
     {
+
         $user = Users::select('id','username','level')->orderBy('id','DESC')->get()->toArray();
-        //return $user;
        return view('admin.user.list',compact('user'));
     }
 
@@ -94,5 +101,9 @@ class UserController extends Controller
         $user->email = $request->txtEmail;
         $user->save();
 
+    }
+
+    public function getLogin(){
+        return "Get Login";
     }
 }

@@ -6,6 +6,9 @@
     <div class="col-lg-12">
         <h1 class="page-header">User
             <small>List</small>
+            @if(isset($usrLog))
+            <small>{{$usrLog->username}}</small>
+            @endif
         </h1>
     </div>
     <!-- /.col-lg-12 -->

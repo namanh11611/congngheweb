@@ -1,5 +1,6 @@
 <?php
 use App\Members;
+//use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,7 +14,7 @@ use App\Members;
 
 Route::get('/', 'WelcomeController@index');
 
-Route::group(['prefix'=>'admin'], function (){
+Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'cate'], function (){
         Route::get('add', ['as'=>'admin.cate.getAdd', 'uses'=>'CateController@getAdd']);
         Route::post('add', ['as'=>'admin.cate.postAdd', 'uses'=>'CateController@postAdd']);
@@ -24,7 +25,7 @@ Route::group(['prefix'=>'admin'], function (){
     });
 });
 
-Route::group(['prefix'=>'admin'], function (){
+Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'product'], function (){
         Route::get('add', ['as'=>'admin.product.getAdd', 'uses'=>'ProductController@getAdd']);
         Route::post('add', ['as'=>'admin.product.postAdd', 'uses'=>'ProductController@postAdd']);
@@ -33,7 +34,7 @@ Route::group(['prefix'=>'admin'], function (){
     });
 });
 
-Route::group(['prefix'=>'admin'], function (){
+Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'user'], function (){
         Route::get('add', ['as'=>'admin.user.getAdd', 'uses'=>'UserController@getAdd']);
         Route::get('edit', ['as'=>'admin.user.getEdit', 'uses'=>'UserController@getEdit']);
@@ -47,7 +48,7 @@ Route::group(['prefix'=>'admin'], function (){
 });
 
 
-Route::group(['prefix'=>'admin'], function (){
+Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'customer'], function (){
         Route::get('add', ['as'=>'admin.customer.getAdd', 'uses'=>'CusController@getAdd']);
         Route::get('edit/{id}', ['as'=>'admin.customer.getEdit', 'uses'=>'CusController@getEdit']);
@@ -66,11 +67,16 @@ Route::get('gio-hang',['as'=>'giohang','uses'=>'WelcomeController@giohang']);
 Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xoasanpham']);
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
 
-Route::get('/addMem', function(){
-    $member = new Xxx();
-    $member->user_id = 1;
-    $member->name = 'tu';
-    $member->save();
-    return "save member !";
+
+Route::group(['prefix'=>'login'], function (){
+   Route::get('user', 'Auth\LoginController@getLogin');
+   Route::post('user', 'Auth\LoginController@postLogin');
+   Route::get('admin', 'Auth\LoginController@getAdminLogin');
+   Route::post('admin', 'Auth\LoginController@postAdminLogin');
 });
 
+
+Route::get('/logout', 'Auth\LoginController@getLogout');
+
+Route::get('/register','Auth\RegisterController@getRegister');
+Route::post('/register','Auth\RegisterController@postRegister');
