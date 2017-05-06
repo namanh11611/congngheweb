@@ -18,18 +18,18 @@ class UserController extends Controller
 {
     public function getAdd($user=null)
     {
-        // if($user == null){
-        //     return "You are not login!";
-        // }
-        // if (user['level'] > 2){
-        //     return "You are not admin!";
-        // }
+        if(Auth::check()){
+            return view('admin.user.add')->with('adminLog',Auth::user());
+        }
         return view('admin.user.add');
     }
 
     public function getEdit($id)
     {
         $data = Users::find($id);
+        if(Auth::check()){
+            return view('admin.user.edit',compact('data'))->with('adminLog',Auth::user());
+        }
         return view('admin.user.edit',compact('data'));
     }
 
@@ -74,13 +74,18 @@ class UserController extends Controller
         $member->user_id = $newUser["id"];
 
         $member->save();
-
+        if(Auth::check()){
+            return view('admin.user.add')->with('adminLog',Auth::user());
+        }
         return view('admin.user.add');
     }
 
     public function getDelete($id){
         $user = Users::find($id);
         $user->delete($id);
+        if(Auth::check()){
+            return redirect()->route('admin.user.list')->with('adminLog',Auth::user());
+        }
         return redirect()->route('admin.user.list');
     }
 
@@ -101,9 +106,8 @@ class UserController extends Controller
         $user->email = $request->txtEmail;
         $user->save();
 
-    }
+        $user = Users::select('id','username','level')->orderBy('id','DESC')->get()->toArray();
+        return view('admin.user.list',compact('user'));
 
-    public function getLogin(){
-        return "Get Login";
     }
 }

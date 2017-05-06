@@ -44,11 +44,18 @@
                     @if($data['level'] == 1 )
                      checked="checked" 
                      @endif
+                    >SuperAdmin
+                </label>
+                <label class="radio-inline">
+                    <input name="rdoLevel" value="3" type="radio"
+                    @if($data['level'] == 2)
+                     checked="checked" 
+                     @endif
                     >Admin
                 </label>
                 <label class="radio-inline">
-                    <input name="rdoLevel" value="2" type="radio"
-                    @if($data['level'] == 2 ||  $data['level'] == 3)
+                    <input name="rdoLevel" value="3" type="radio"
+                    @if($data['level'] == 3)
                      checked="checked" 
                      @endif
                     >Member
