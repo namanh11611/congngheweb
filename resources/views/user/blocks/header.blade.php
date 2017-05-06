@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <a href="index-2.html" class="logo pull-left"><img src="{!! url('user/img/logo.png') !!}" alt="Logo"
+                <a href="{!! url('/') !!}" class="logo pull-left"><img src="{!! url('user/img/logo.jpg') !!}" alt="Logo"
                                                                    title="Logo"></a>
                 <!-- Top Nav Start -->
                 <div class="pull-left">

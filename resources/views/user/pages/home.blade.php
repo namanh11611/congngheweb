@@ -36,9 +36,9 @@
         <ul class="thumbnails">
         @foreach($product as $item)
             <li class="span3">
-                <a class="prdocutname" href="product.html">Product Name Here</a>
+                <a class="prdocutname" href="product.html">LAPTOP DELL VOSTRO</a>
                 <div class="thumbnail">
-                    <a href="#"><img alt="" src="{!! url('user/img/product1a.jpg') !!}"></a>
+                    <a href="#"><img alt="" src="{!! url('user/img/product1.jpg') !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
                         <div class="price">
@@ -49,9 +49,9 @@
                 </div>
             </li>
             <li class="span3">
-                <a class="prdocutname" href="product.html">Product Name Here</a>
+                <a class="prdocutname" href="product.html">MACBOOK AIR 2015</a>
                 <div class="thumbnail">
-                    <a href="#"><img alt="" src="{!! url('user/img/product2a.jpg') !!}"></a>
+                    <a href="#"><img alt="" src="{!! url('user/img/product2.jpg') !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
                         <div class="price">
@@ -62,10 +62,10 @@
                 </div>
             </li>
             <li class="span3">
-                <a class="prdocutname" href="product.html">Product Name Here</a>
+                <a class="prdocutname" href="product.html">LAPTOP DELL VOSTRO</a>
                 <div class="thumbnail">
                     <span class="new tooltip-test">New</span>
-                    <a href="#"><img alt="" src="{!! url('user/img/product1a.jpg') !!}"></a>
+                    <a href="#"><img alt="" src="{!! url('user/img/product1.jpg') !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
                         <div class="price">
@@ -76,9 +76,9 @@
                 </div>
             </li>
             <li class="span3">
-                <a class="prdocutname" href="product.html">Product Name Here</a>
+                <a class="prdocutname" href="product.html">MACBOOK AIR 2015</a>
                 <div class="thumbnail">
-                    <a href="#"><img alt="" src="{!! url('user/img/product2a.jpg') !!}"></a>
+                    <a href="#"><img alt="" src="{!! url('user/img/product2.jpg') !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
                         <div class="price">
