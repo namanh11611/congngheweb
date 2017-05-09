@@ -2,7 +2,7 @@
     <div id="categorymenu">
         <nav class="subnav">
             <ul class="nav-pills categorymenu">
-            <li><a href="{{ url('/') }}">Trang Chủ</a></li>
+            <li><a href="{{ url('/') }}">Home</a></li>
             <?php 
                 $menu_level_1 = DB::table('category')->where('parent_id',0)->get();
             ?>

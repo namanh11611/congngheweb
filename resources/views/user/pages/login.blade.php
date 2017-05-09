@@ -25,38 +25,39 @@
                         <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
                         <br>
                         <br>
-                        <a href="#" class="btn btn-orange">Continue</a>
+                        <a href="./../register" class="btn btn-orange">Continue</a>
                     </div>
                 </section>
                 <section class="returncustomer">
                     <h2 class="heading2">Returning Customer </h2>
                     <div class="loginbox">
                         <h4 class="heading4">I am a returning customer</h4>
-                        <form class="form-vertical">
+                        <form class="form-vertical" method="POST">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <fieldset>
                                 <div class="control-group">
                                     <label  class="control-label">E-Mail Address:</label>
                                     <div class="controls">
-                                        <input type="text"  class="span3">
+                                        <input type="text" class="span3" name="txtEmail">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label  class="control-label">Password:</label>
                                     <div class="controls">
-                                        <input type="text"  class="span3">
+                                        <input type="password"  class="span3" name="txtPassword">
                                     </div>
                                 </div>
                                 <a class="" href="#">Forgotten Password</a>
                                 <br>
                                 <br>
-                                <a href="#" class="btn btn-orange">Login</a>
+                                <input type="submit" name="submit" class="btn btn-orange" value="Login">
                             </fieldset>
                         </form>
                     </div>
                 </section>
             </div>
 
-            <!-- Sidebar Start-->
+            <!-- 
             <aside class="span3">
                 <div class="sidewidt">
                     <h2 class="heading2"><span>Account</span></h2>
@@ -91,7 +92,7 @@
                     </ul>
                 </div>
             </aside>
-            <!-- Sidebar End-->
+            -->
         </div>
     </div>
 </section>
