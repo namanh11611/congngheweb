@@ -2,15 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="span12">
-                <a href="{!! url('/') !!}" class="logo pull-left"><img src="{!! url('user/img/logo.jpg') !!}" alt="Logo"
+                <a href="{!! url('/') !!}" class="logo pull-left"><img src="{!! url('user/img/log.jpg') !!}" alt="Logo"
                                                                    title="Logo"></a>
                 <!-- Top Nav Start -->
                 <div class="pull-left">
                     <div class="navbar" id="topnav">
                         <div class="navbar-inner">
                             <ul class="nav">
-                                <li><a class="home active" href="{!! url('/') !!}">Home</a>
-                                </li>
                                 @if(isset($userLogined))
                                 <li><a class="myaccount" href="{{ url('myAccount') }}">{{$userLogined->username}}</a>
                                 </li>
