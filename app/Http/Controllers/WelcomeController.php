@@ -6,7 +6,6 @@
  * Time: 9:55 AM
  */
 namespace App\Http\Controllers;
-<<<<<<< HEAD
 
 use App\Customer;
 use App\Http\Requests\InfomationRequest;
@@ -14,13 +13,9 @@ use App\OrderOutProduct;
 use App\OrderOutput;
 use DB, Cart;
 use Illuminate\Http\Request;
-
-
-=======
-use DB,Cart;
 use Illuminate\Support\Facades\Auth;
 use View;
->>>>>>> a445310d4c7577143afd9a50b08b795f9c6f5a33
+
 class WelcomeController extends Controller
 {
     function __construct(){
@@ -71,7 +66,8 @@ class WelcomeController extends Controller
     public function giohang(){
         $content = Cart::content();
         $total1 = Cart::total();
-    
+        // dd($total1);
+        // echo 1;die;
         return view('user.pages.shopping',compact('content','total1'));
     }
     public function xoasanpham ($id){
@@ -82,19 +78,23 @@ class WelcomeController extends Controller
         }
         return redirect()->route('giohang');
     }
-    public function capnhat(Request $request){
-        dd($request->all());
-        if(Request::ajax()){
-            // echo "capnhat";
-            // $rowId = Request::get('rowId');
-            $id = Request::get('id');
-            $qty = Request::get('qty');
-            // echo $rowId;
-            // echo "  ";
-            echo $id;
-            Cart::update($id,$qty);
-            echo "oke";
-        }
+    public function capnhat($id, $qty, Request $request){
+        // if(Request::ajax()){
+        //     // echo "capnhat";
+        //     // $rowId = Request::get('rowId');
+        //     $qty = Request::get('qty');
+        //     // echo $rowId;
+        //     // echo "  ";
+        //     echo $id;
+        //     Cart::update($id,$qty);
+        //     echo "oke";
+        // }
+        // $shopping = Sho
+    }
+    public function checkout(){
+        $content = Cart::content();
+        $total1 = Cart::total();
+        return view('user.pages.checkout', compact('content','total1'));
     }
 
 }

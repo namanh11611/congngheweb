@@ -13,6 +13,7 @@ use App\Members;
 */
 
 Route::get('/', 'WelcomeController@index');
+Route::get('home', 'WelcomeController@index');
 
 Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'cate'], function (){
@@ -68,6 +69,7 @@ Route::get('xoa-san-pham/{id}',['as'=>'xoasanpham','uses'=>'WelcomeController@xo
 Route::get('cap-nhat/{id}/{qty}',['as'=>'capnhat','uses'=>'WelcomeController@capnhat']);
 Route::get('chi-tiet-san-pham/{id}/{tenloai}',['as'=>'chitietsanpham','uses'=>'WelcomeController@chitietsanpham']);
 
+Route::get('check-out',['as'=>'checkout','uses'=>'WelcomeController@checkout']);
 
 Route::group(['prefix'=>'login'], function (){
    Route::get('user', 'Auth\LoginController@getLogin');
