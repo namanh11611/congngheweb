@@ -20,8 +20,8 @@ Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
         Route::post('add', ['as'=>'admin.cate.postAdd', 'uses'=>'CateController@postAdd']);
         Route::get('list', ['as'=>'admin.cate.list', 'uses'=>'CateController@getList']);
         Route::get('delete/{id}', ['as'=>'admin.cate.getDelete', 'uses'=>'CateController@getDelete']);
-         Route::get('edit/{id}', ['as'=>'admin.cate.getEdit', 'uses'=>'CateController@getEdit']);
-         Route::post('edit/{id}', ['as'=>'admin.cate.postEdit', 'uses'=>'CateController@postEdit']);
+        Route::get('edit/{id}', ['as'=>'admin.cate.getEdit', 'uses'=>'CateController@getEdit']);
+        Route::post('edit/{id}', ['as'=>'admin.cate.postEdit', 'uses'=>'CateController@postEdit']);
     });
 });
 
@@ -29,8 +29,10 @@ Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'product'], function (){
         Route::get('add', ['as'=>'admin.product.getAdd', 'uses'=>'ProductController@getAdd']);
         Route::post('add', ['as'=>'admin.product.postAdd', 'uses'=>'ProductController@postAdd']);
-        Route::get('edit', ['as'=>'admin.product.getEdit', 'uses'=>'ProductController@getEdit']);
         Route::get('list', ['as'=>'admin.product.list', 'uses'=>'ProductController@getList']);
+        Route::get('delete/{id}', ['as'=>'admin.product.getDelete', 'uses'=>'ProductController@getDelete']);
+        Route::get('edit/{id}', ['as'=>'admin.product.getEdit', 'uses'=>'ProductController@getEdit']);
+        Route::post('edit/{id}', ['as'=>'admin.product.postEdit', 'uses'=>'ProductController@postEdit']);
     });
 });
 
@@ -47,7 +49,6 @@ Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     });
 });
 
-
 Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
     Route::group(['prefix'=>'customer'], function (){
         Route::get('add', ['as'=>'admin.customer.getAdd', 'uses'=>'CusController@getAdd']);
@@ -58,6 +59,40 @@ Route::group(['prefix'=>'admin', 'middleware' => 'adminLogin'], function (){
         Route::get('delete/{id}', ['as'=>'admin.customer.getDelete', 'uses'=>'CusController@getDelete']);
     });
 });
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function (){
+    Route::group(['prefix'=>'orderin'], function (){
+        Route::get('list', ['as'=>'admin.orderin.list', 'uses'=>'OrderInController@getList']);
+        Route::get('add', ['as'=>'admin.orderin.getAdd', 'uses'=>'OrderInController@getAdd']);
+        Route::post('add', ['as'=>'admin.orderin.postAdd', 'uses'=>'OrderInController@postAdd']);
+        Route::get('delete/{id}', ['as'=>'admin.orderin.getDelete', 'uses'=>'UserController@getDelete']);
+        Route::get('edit/{id}', ['as'=>'admin.orderin.getEdit', 'uses'=>'UserController@getEdit']);
+        Route::post('edit/{id}', ['as'=>'admin.orderin.postEdit', 'uses'=>'UserController@postEdit']);
+    });
+});
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function (){
+    Route::group(['prefix'=>'provider'], function (){
+        Route::get('list', ['as'=>'admin.provider.list', 'uses'=>'ProviderController@getList']);
+        Route::get('add', ['as'=>'admin.provider.getAdd', 'uses'=>'ProviderController@getAdd']);
+        Route::post('add', ['as'=>'admin.provider.postAdd', 'uses'=>'ProviderController@postAdd']);
+        Route::get('delete/{id}', ['as'=>'admin.provider.getDelete', 'uses'=>'UserController@getDelete']);
+        Route::get('edit/{id}', ['as'=>'admin.provider.getEdit', 'uses'=>'UserController@getEdit']);
+        Route::post('edit/{id}', ['as'=>'admin.provider.postEdit', 'uses'=>'UserController@postEdit']);
+    });
+});
+
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function (){
+    Route::group(['prefix'=>'orderout'], function (){
+        Route::get('list', ['as'=>'admin.orderout.list', 'uses'=>'OrderOutController@getList']);
+        Route::get('treat/{id}', ['as'=>'admin.orderout.getTreat', 'uses'=>'OrderOutController@getTreat']);
+        Route::post('treat/{id}', ['as'=>'admin.orderout.postTreat', 'uses'=>'OrderOutController@postTreat']);
+        Route::get('canceled/{id}', ['as'=>'admin.orderout.getCanceled', 'uses'=>'OrderOutController@getCanceled']);
+        Route::get('completed/{id}', ['as'=>'admin.orderout.getCompleted', 'uses'=>'OrderOutController@getCompleted']);
+        Route::get('return/{id}', ['as'=>'admin.orderout.getReturn', 'uses'=>'OrderOutController@getReturn']);
+    });
+});
+
 
 Route::get('loai-san-pham/{id}/{tenloai}',['as'=>'loaisanpham','uses'=>'WelcomeController@loaisanpham']);
 Route::get('lien-he',['as'=>'getLienhe','uses'=>'WelcomeController@get_lienhe']);
