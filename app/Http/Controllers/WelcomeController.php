@@ -6,7 +6,6 @@
  * Time: 9:55 AM
  */
 namespace App\Http\Controllers;
-<<<<<<< HEAD
 
 use App\Customer;
 use App\Http\Requests\InfomationRequest;
@@ -14,13 +13,8 @@ use App\OrderOutProduct;
 use App\OrderOutput;
 use DB, Cart;
 use Illuminate\Http\Request;
-
-
-=======
-use DB,Cart;
 use Illuminate\Support\Facades\Auth;
 use View;
->>>>>>> a445310d4c7577143afd9a50b08b795f9c6f5a33
 class WelcomeController extends Controller
 {
     function __construct(){

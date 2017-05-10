@@ -80,4 +80,10 @@ class LoginController extends Controller
         Auth::logout();
         return redirect('');
      }
+
+
+     public function getInfo(){
+        $userLogined = Auth::user();
+        return view('user.pages.infodetail', compact('userLogined'))->with('userInfo',$userLogined);
+     }
 }

@@ -81,3 +81,5 @@ Route::get('/logout', 'Auth\LoginController@getLogout');
 
 Route::get('/register','Auth\RegisterController@getRegister');
 Route::post('/register','Auth\RegisterController@postRegister');
+
+Route::get('/myAccount','Auth\LoginController@getInfo');

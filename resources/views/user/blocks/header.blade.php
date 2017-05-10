@@ -12,7 +12,7 @@
                                 <li><a class="home active" href="{!! url('/') !!}">Home</a>
                                 </li>
                                 @if(isset($userLogined))
-                                <li><a class="myaccount" href="#">{{$userLogined->username}}</a>
+                                <li><a class="myaccount" href="{{ url('myAccount') }}">{{$userLogined->username}}</a>
                                 </li>
                                 <li><a class="myaccount" href="{{
                                 action('Auth\LoginController@getLogout')
