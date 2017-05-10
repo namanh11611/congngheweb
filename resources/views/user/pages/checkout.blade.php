@@ -53,12 +53,6 @@
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" >Telephone<span class="red">*</span></label>
-                                        <div class="controls">
-                                            <input type="text" class=""  value="">
-                                        </div>
-                                    </div>
-                                    <div class="control-group">
                                         <label class="control-label" >Password<span class="red">*</span></label>
                                         <div class="controls">
                                             <input type="text" class=""  value="">
@@ -136,66 +130,39 @@
                             </fieldset>
                         </form>
                     </div>
-                    <a class="btn btn-orange pull-right">Continue</a>
+                    <a class="btn btn-orange pull-right" href="{!! url('home') !!}" onclick="xacNhanMuaHang('Bạn đã đặt hàng thành công?')">Confirm</a>
                 </div>
                 <div class="checkoutsteptitle">Step 2: Confirm Order<a class="modify">Modify</a>
                 </div>
                 <div class="checkoutstep">
                     <div class="cart-info">
                         <table class="table table-striped table-bordered">
-                            <tr>
-                                <th class="image">Image</th>
-                                <th class="name">Product Name</th>
-                                <th class="model">Model</th>
-                                <th class="quantity">Quantity</th>
-                                <th class="price">Unit Price</th>
-                                <th class="total">Total</th>
-                            </tr>
-                            <tr>
-                                <td class="image"><a href="#"><img title="product" alt="product" src="img/prodcut-40x40.jpg" height="50" width="50"></a></td>
-                                <td  class="name"><a href="#">Jeans</a></td>
-                                <td class="model">My Product</td>
-                                <td class="quantity"><input type="text" size="1" value="1" name="quantity[40]" class="span1">
-                                    &nbsp;
-                                    <a href="#"><img class="tooltip-test" data-original-title="Update" src="img/update.png" alt=""></a>
-                                    <a href="#"><img class="tooltip-test" data-original-title="Remove"  src="img/remove.png" alt=""></a></td>
-                                <td class="price">$120.68</td>
-                                <td class="total">$120.68</td>
-                            </tr>
-                            <tr>
-                                <td class="image"><a href="#"><img title="product" alt="product" src="img/prodcut-40x40.jpg" height="50" width="50"></a></td>
-                                <td   class="name"><a href="#">T-Shirt</a></td>
-                                <td class="model">My Product</td>
-                                <td class="quantity"><input type="text" size="1" value="1" name="quantity[40]" class="span1">
-                                    &nbsp;
-                                    <a href="#"><img class="tooltip-test" data-original-title="Update" src="img/update.png" alt=""></a>
-                                    <a href="#"><img class="tooltip-test" data-original-title="Remove" src="img/remove.png" alt=""></a></td>
-                                <td class="price">$120.68</td>
-                                <td class="total">$120.68</td>
-                            </tr>
-                            <tr>
-                                <td class="image"><a href="#"><img title="product" alt="product" src="img/prodcut-40x40.jpg" height="50" width="50"></a></td>
-                                <td   class="name"><a href="#">Mobile</a></td>
-                                <td class="model">My Product</td>
-                                <td class="quantity"><input type="text" size="1" value="1" name="quantity[40]" class="span1">
-                                    &nbsp;
-                                    <a href="#"><img class="tooltip-test" data-original-title="Update" src="img/update.png" alt=""></a>
-                                    <a href="#"><img class="tooltip-test" data-original-title="Remove" src="img/remove.png" alt=""></a></td>
-                                <td class="price">$130.00</td>
-                                <td class="total">$110.25</td>
-                            </tr>
-                            <tr>
-                                <td class="image"><a href="#"><img title="product" alt="product" src="img/prodcut-40x40.jpg" height="50" width="50"></a></td>
-                                <td   class="name"><a href="#">T-Shirt</a></td>
-                                <td class="model">product 11</td>
-                                <td class="quantity"><input type="text" size="1" value="1" name="quantity[40]" class="span1">
-                                    &nbsp;
-                                    <a href="#"><img class="tooltip-test" data-original-title="Update" src="img/update.png" alt=""></a>
-                                    <a href="#">
-                                        <img class="tooltip-test" data-original-title="Remove" src="img/remove.png" alt=""></a></td>
-                                <td class="price">$124.38</td>
-                                <td class="total">$120.46</td>
-                            </tr>
+                            < <tr>
+                    <th class="image">Image</th>
+                    <th class="name">Product Name</th>       
+                    <th class="quantity">Quantity</th>
+                    <th class="total">Action</th>
+                    <th class="price">Unit Price</th>
+                    <th class="total">Total</th>
+
+                </tr>
+                <form method="POST" action="">
+                     
+                 @foreach ($content as $item)
+                 <input  name="_token" type="hidden" value="{!! csrf_token() !!}" />
+                <tr>                  
+                    <td class="image"><a href="#"><img title="product" alt="product" src="{!! asset('../resources/upload/'.$item->options->img) !!}" height="50" width="50"></a></td>
+                    <td  class="name"><a href="#">{!! $item->name !!}</a></td>                   
+                    <td class="quantity"><input class="span1 qty" type="text" size="1" id="{!! $item->rowId !!}" value='{!! $item->qty !!}' name="quantity[40]" />
+                    </td>
+                    <td class="total"> 
+                        <a href="#" class="update" id="{!! $item->rowId !!}" onclick="update_item('{!! $item->rowId !!}')"><img class="tooltip-test" data-original-title="Update" src="{!! asset('/user/img/update.png') !!}" alt=""></a>
+                        <a href="{!! url('xoa-san-pham',['id'=>$item->rowId]) !!}"><img class="tooltip-test" data-original-title="Remove"  src="{!! asset('user/img/remove.png') !!}" alt=""></a></td>
+                    <td class="price" id="price_{!! $item->rowId !!}">{!! $item->price !!}</td>
+                    <td class="total sum_total_{!! $item->rowId !!}" id="total_{!! $item->rowId !!}">{!! $item->price*$item->qty !!}</td>
+                </tr>
+                @endforeach
+                </form>
                         </table>
                     </div>
                     <div class="row">
@@ -203,21 +170,10 @@
                             <div class="span4 pull-right">
                                 <table class="table table-striped table-bordered ">
                                     <tbody>
-                                    <tr>
-                                        <td><span class="extra bold">Sub-Total :</span></td>
-                                        <td><span class="bold">$101.0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="extra bold">Eco Tax (-2.00) :</span></td>
-                                        <td><span class="bold">$11.0</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td><span class="extra bold">VAT (17.5%) :</span></td>
-                                        <td><span class="bold">$21.0</span></td>
-                                    </tr>
+                
                                     <tr>
                                         <td><span class="extra bold totalamout">Total :</span></td>
-                                        <td><span class="bold totalamout">$120.68</span></td>
+                                        <td><span class="bold totalamout">{!! $total1 !!}</span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -255,4 +211,12 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    function xacNhanMuaHang(msg) {
+  if(window.confirm(msg)){
+    return true;
+  }
+  return false;
+}
+</script>
 @endsection

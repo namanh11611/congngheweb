@@ -14,6 +14,25 @@
     <link href="{!! url('user/css/flexslider.css') !!}" type="text/css" media="screen" rel="stylesheet"  />
     <link href="{!! url('user/css/jquery.fancybox.css') !!}" rel="stylesheet">
     <link href="{!! url('user/css/cloud-zoom.css') !!}" rel="stylesheet">
+<<<<<<< HEAD
+    <script src="{!! url('user/js/jquery.js') !!}"></script>
+<script src="{!! url('user/js/bootstrap.js') !!}"></script>
+<script src="{!! url('user/js/respond.min.js') !!}"></script>
+<script src="{!! url('user/js/application.js') !!}"></script>
+<script src="{!! url('user/js/bootstrap-tooltip.js') !!}"></script>
+<script defer src="{!! url('user/js/jquery.fancybox.js') !!}"></script>
+<script defer src="{!! url('user/js/jquery.flexslider.js') !!}"></script>
+<script type="text/javascript" src="{!! url('user/js/jquery.tweet.js') !!}"></script>
+<script src="{!! url('user/js/cloud-zoom.1.0.2.js') !!}"></script>
+<script type="text/javascript" src="{!! url('user/js/jquery.validate.js') !!}"></script>
+<script type="text/javascript" src="{!! url('user/js/jquery.carouFredSel-6.1.0-packed.js') !!}"></script>
+<script type="text/javascript" src="{!! url('user/js/jquery.mousewheel.min.js') !!}"></script>
+<script type="text/javascript" src="{!! url('user/js/jquery.touchSwipe.min.js') !!}"></script>
+<script type="text/javascript" src="{!! url('user/js/jquery.ba-throttle-debounce.min.js') !!}"></script>
+<script defer src="{!! url('user/js/custom.js') !!}"></script>
+<script src="{!! url('user/js/myscript.js') !!}"></script>
+=======
+>>>>>>> 4dc4d890a4caba765c8e7996dfa504d7abfa3d81
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
@@ -118,21 +137,6 @@
 <!-- javascript
   ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="{!! url('user/js/jquery.js') !!}"></script>
-<script src="{!! url('user/js/bootstrap.js') !!}"></script>
-<script src="{!! url('user/js/respond.min.js') !!}"></script>
-<script src="{!! url('user/js/application.js') !!}"></script>
-<script src="{!! url('user/js/bootstrap-tooltip.js') !!}"></script>
-<script defer src="{!! url('user/js/jquery.fancybox.js') !!}"></script>
-<script defer src="{!! url('user/js/jquery.flexslider.js') !!}"></script>
-<script type="text/javascript" src="{!! url('user/js/jquery.tweet.js') !!}"></script>
-<script src="{!! url('user/js/cloud-zoom.1.0.2.js') !!}"></script>
-<script type="text/javascript" src="{!! url('user/js/jquery.validate.js') !!}"></script>
-<script type="text/javascript" src="{!! url('user/js/jquery.carouFredSel-6.1.0-packed.js') !!}"></script>
-<script type="text/javascript" src="{!! url('user/js/jquery.mousewheel.min.js') !!}"></script>
-<script type="text/javascript" src="{!! url('user/js/jquery.touchSwipe.min.js') !!}"></script>
-<script type="text/javascript" src="{!! url('user/js/jquery.ba-throttle-debounce.min.js') !!}"></script>
-<script defer src="{!! url('user/js/custom.js') !!}"></script>
-<script src="{!! url('user/js/myscript.js') !!}"></script>
+
 </body>
 </html>
