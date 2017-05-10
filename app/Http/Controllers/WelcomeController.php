@@ -15,7 +15,10 @@ use DB, Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use View;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4dc4d890a4caba765c8e7996dfa504d7abfa3d81
 class WelcomeController extends Controller
 {
     function __construct(){

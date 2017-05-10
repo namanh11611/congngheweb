@@ -3,16 +3,16 @@
         <div class="flexslider" id="mainslider">
             <ul class="slides">
                 <li>
-                    <img src="{!! url('user/img/bn2.jpg') !!}" alt=""/>
+                    <img src="{!! url('user/img/b1.jpg') !!}" alt=""/>
                 </li>
                 <li>
-                    <img src="{!! url('user/img/bn3.jpg') !!}" alt=""/>
+                    <img src="{!! url('user/img/b2.jpg') !!}" alt=""/>
                 </li>
                 <li>
-                    <img src="{!! url('user/img/bn2.jpg') !!}" alt=""/>
+                    <img src="{!! url('user/img/b3.jpg') !!}" alt=""/>
                 </li>
                 <li>
-                    <img src="{!! url('user/img/bn3.jpg') !!}" alt=""/>
+                    <img src="{!! url('user/img/b4.jpg') !!}" alt=""/>
                 </li>
             </ul>
         </div>

@@ -47,6 +47,12 @@
                                         <input type="password"  class="span3" name="txtPassword">
                                     </div>
                                 </div>
+                                <div class="control-group">
+                                    <div class="controls">
+                                        <input type="checkbox" name="checkbox" value="1" >
+                                        <a href="">Remember Me</a>
+                                    </div>
+                                </div>
                                 <a class="" href="#">Forgotten Password</a>
                                 <br>
                                 <br>

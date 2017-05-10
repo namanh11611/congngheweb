@@ -26,30 +26,6 @@
                         @endforeach()
                     </ul>
                 </div>
-                <!--  Best Seller -->
-                <div class="sidewidt">
-                    <h2 class="heading2"><span>Best Seller</span></h2>
-                    <ul class="bestseller">
-                        <li>
-                            <img width="50" height="50" src="img/prodcut-40x40.jpg" alt="product" title="product">
-                            <a class="productname" href="product.html"> Product Name</a>
-                            <span class="procategory">Women Accessories</span>
-                            <span class="price">$250</span>
-                        </li>
-                        <li>
-                            <img width="50" height="50" src="img/prodcut-40x40.jpg" alt="product" title="product">
-                            <a class="productname" href="product.html"> Product Name</a>
-                            <span class="procategory">Electronics</span>
-                            <span class="price">$250</span>
-                        </li>
-                        <li>
-                            <img width="50" height="50" src="img/prodcut-40x40.jpg" alt="product" title="product">
-                            <a class="productname" href="product.html"> Product Name</a>
-                            <span class="procategory">Electronics</span>
-                            <span class="price">$250</span>
-                        </li>
-                    </ul>
-                </div>
                 <!-- Latest Product -->
                 <div class="sidewidt">
                     <h2 class="heading2"><span>Latest Products</span></h2>
@@ -63,20 +39,6 @@
                         </li>
                         @endforeach()
                     </ul>
-                </div>
-                <!--  Must have -->
-                <div class="sidewidt">
-                    <h2 class="heading2"><span>Must have</span></h2>
-                    <div class="flexslider" id="mainslider">
-                        <ul class="slides">
-                            <li>
-                                <img src="img/product1.jpg" alt="" />
-                            </li>
-                            <li>
-                                <img src="img/product2.jpg" alt="" />
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </aside>
             <!-- Sidebar End-->
@@ -93,7 +55,6 @@
                                     <li class="span3">
                                         <a class="productname" href="product.html">{!! $item_product_cate->name !!}</a>
                                         <div class="thumbnail">
-                                            <span class="sale tooltip-test">Sale</span>
                                             <a href="#"><img alt="" src="{{ asset('../resources/upload/'.$item_product_cate->image)}}"></a>
                                             <div class="pricetag">
                                                 <span class="spiral"></span><a href="{!! url('mua-hang',[$item_product_cate->id,$item_product_cate->alias]) !!}" class="productcart">ADD TO CART</a>

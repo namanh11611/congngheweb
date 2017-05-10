@@ -160,8 +160,33 @@
                                     <a href="{!! route('admin.customer.getAdd') !!}">Add Customer</a>
                                 </li>
                             </ul>
-                             
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Order Input<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!! route('admin.orderin.list') !!}">List Order Input</a>
+                                </li>
+                                <li>
+                                    <a href="{!! route('admin.orderin.getAdd') !!}">Add Order Input</a>
+                                </li>
+                                <li>
+                                    <a href="{!! route('admin.provider.list') !!}">List Provider</a>
+                                </li>
+                                <li>
+                                    <a href="{!! route('admin.provider.getAdd') !!}">Add Provider</a>
+                                </li>
                             </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-shopping-cart fa-fw"></i> Order Out<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{!! route('admin.orderout.list') !!}">List Order Output</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                     </ul>
                 </div>

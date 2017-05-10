@@ -44,7 +44,7 @@
             border-radius: 24px;
         }
         input[type=submit]{
-            background-color: #FFDE00;
+            background-color: #003333;
             color: white;
             padding: 16px 32px;
             text-decoration: none;

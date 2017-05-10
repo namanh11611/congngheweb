@@ -17,6 +17,7 @@ class Provider extends Migration
             $table->increments('id');
             $table->string('name_provider');
             $table->string('address');
+            $table->string('phone_number');
             $table->timestamps();
         });
     }

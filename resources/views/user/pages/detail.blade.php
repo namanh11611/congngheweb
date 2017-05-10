@@ -2,6 +2,11 @@
 @section('description', 'Detail')
 @section('author', 'Viet Viet')
 @section('content')
+<style type="text/css">
+    a.cart {
+        background-color: #1E88E5;
+    }
+</style>
 <div id="maincontainer">
 <section id="product">
 <div class="container">
