@@ -1,0 +1,1 @@
+Day la giao dien gui mail di {{ $hoten }} va {{ $tinnhan }}

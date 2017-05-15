@@ -11,14 +11,13 @@ use App\Customer;
 use App\Http\Requests\InfomationRequest;
 use App\OrderOutProduct;
 use App\OrderOutput;
-use DB, Cart;
+use DB, Cart , Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use View;
-<<<<<<< HEAD
 
-=======
->>>>>>> 4dc4d890a4caba765c8e7996dfa504d7abfa3d81
+use View;
+
+
 class WelcomeController extends Controller
 {
     function __construct(){
@@ -82,22 +81,28 @@ class WelcomeController extends Controller
         return redirect()->route('giohang');
     }
     public function capnhat($id, $qty, Request $request){
-        // if(Request::ajax()){
-        //     // echo "capnhat";
-        //     // $rowId = Request::get('rowId');
-        //     $qty = Request::get('qty');
-        //     // echo $rowId;
-        //     // echo "  ";
-        //     echo $id;
-        //     Cart::update($id,$qty);
-        //     echo "oke";
-        // }
-        // $shopping = Sho
+    
     }
     public function checkout(){
         $content = Cart::content();
         $total1 = Cart::total();
         return view('user.pages.checkout', compact('content','total1'));
+    }
+    public function get_lienhe(){
+        return view('user.pages.contact');
+    }
+    public function post_lienhe(Request $request){
+        // dd($request->all());
+        $data = ['hoten'=>$request->name,'tinnhan'=>$request->messages,'email'=>$request->email];
+        Mail::send('emails.blanks',$data,function($msg) use ($request){
+            $msg->from('hieutm.bk@gmail.com','Minh Hieu');
+            $msg->to($request->email,$request->hoten)->subject('Đây là Mail từ E-Shopping');
+
+        });
+        echo "<script>
+            alert('Cám ơn bạn đã góp ý. Chúng tôi sẽ liên hệ lại với bạn trong thời gian sớm nhất');
+            window.location = '".url('/')."'
+        </script>";
     }
 
 }
