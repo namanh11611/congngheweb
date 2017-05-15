@@ -16,8 +16,11 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 use View;
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 863b55482e6099c51fdd67dee8115700d17f034c
 class WelcomeController extends Controller
 {
     function __construct(){
