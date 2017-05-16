@@ -14,10 +14,6 @@
     <link href="{!! url('user/css/flexslider.css') !!}" type="text/css" media="screen" rel="stylesheet"  />
     <link href="{!! url('user/css/jquery.fancybox.css') !!}" rel="stylesheet">
     <link href="{!! url('user/css/cloud-zoom.css') !!}" rel="stylesheet">
-<<<<<<< HEAD
-
-=======
->>>>>>> 863b55482e6099c51fdd67dee8115700d17f034c
     <script src="{!! url('user/js/jquery.js') !!}"></script>
 <script src="{!! url('user/js/bootstrap.js') !!}"></script>
 <script src="{!! url('user/js/respond.min.js') !!}"></script>
@@ -34,10 +30,6 @@
 <script type="text/javascript" src="{!! url('user/js/jquery.ba-throttle-debounce.min.js') !!}"></script>
 <script defer src="{!! url('user/js/custom.js') !!}"></script>
 <script src="{!! url('user/js/myscript.js') !!}"></script>
-<<<<<<< HEAD
-
-=======
->>>>>>> 863b55482e6099c51fdd67dee8115700d17f034c
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
     <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>-->
