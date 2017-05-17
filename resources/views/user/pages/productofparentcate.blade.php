@@ -26,7 +26,7 @@
                         @endforeach()
                     </ul>
                 </div>
-                <!-- Latest Product -->
+                <!-- Latest Product 
                 <div class="sidewidt">
                     <h2 class="heading2"><span>Latest Products</span></h2>
                     <ul class="bestseller">
@@ -39,7 +39,7 @@
                         </li>
                         @endforeach()
                     </ul>
-                </div>
+                </div> -->
             </aside>
             <!-- Sidebar End-->
             <!-- Category-->
@@ -51,12 +51,11 @@
                             <!-- Category-->
                             <section id="categorygrid">
                                 <ul class="thumbnails grid">
-                                @if(count($product_cate) > 0)
                                 @foreach($product_cate as $item_product_cate)
                                     <li class="span3">
                                         <a class="productnamecate" href="#">{!! $item_product_cate->name !!}</a>
                                         <div class="thumbnail">
-                                            <a href="{!! url('chi-tiet-san-pham',[$item_product_cate->id,$item_product_cate->alias]) !!}"><img alt="" src="{{ asset('../resources/upload/'.$item_product_cate->image)}}"></a>
+                                            <a href="#"><img alt="" src="{{ asset('../resources/upload/'.$item_product_cate->image)}}"></a>
                                             <div class="pricetag">
                                                 <span class="spiral"></span><a href="{!! url('mua-hang',[$item_product_cate->id,$item_product_cate->alias]) !!}" class="productcart">ADD TO CART</a>
                                                 <div class="price">
@@ -67,10 +66,8 @@
                                         </div>
                                     </li> 
                                     @endforeach()
-                                    @endif
                                 </ul>            
                                 <div class="pagination pull-right">
-                                    @if(count($product_cate) > 0)
                                     <ul>
                                         @if($product_cate->currentPage() != 1)
                                         <li><a href="{!! str_replace('/?','?',$product_cate->url($product_cate->currentPage() - 1)) !!}">Prev</a>
@@ -86,7 +83,6 @@
                                         @endif
                                         </li>
                                     </ul>
-                                    @endif
                                 </div>
                             </section>
                         </div>

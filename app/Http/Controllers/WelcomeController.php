@@ -40,8 +40,28 @@ class WelcomeController extends Controller
         return view('user.pages.home',compact('product'));
     }
     public function loaisanpham($id){
-    	$product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$id)->paginate(2);
-    	$cate = DB::table('category')->select('parent_id')->where('id',$product_cate[0]->cate_id)->first();
+        $cate = DB::table('category')->select('parent_id')->where('id',$id)->first();
+        if($cate->parent_id == 0){
+            $lasted_product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->take(3)->get();
+            $menu_cate = DB::table('category')->select('id','name','alias')->where('parent_id',$id)->get();
+            $name_cate = DB::table('category')->select('name')->where('id',$id)->first();
+            $cateOfProduct = DB::table('category')->select('id')->where('parent_id',$id)->get();
+            $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$cateOfProduct[0]->id)->paginate(2);
+
+            if (Auth::check()){
+                return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'))->with('userLogined',Auth::user());
+            }
+                return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'));
+        }
+    	$product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$id)->get();
+        if(count($product_cate) == 0){
+            $cate = DB::table('category')->select('parent_id')->where('id',$id)->first();
+        }else{
+            $cate = DB::table('category')->select('parent_id')->where('id',$product_cate[0]->cate_id)->first();
+        }
+        $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$id);
+        $product_cate = $product_cate->paginate(10);
+        
     	$menu_cate = DB::table('category')->select('id','name','alias')->where('parent_id',$cate->parent_id)->get();
     	$name_cate = DB::table('category')->select('name')->where('id',$id)->first();
     	$lasted_product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->take(3)->get();
