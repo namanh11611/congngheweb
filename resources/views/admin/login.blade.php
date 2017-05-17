@@ -35,6 +35,7 @@
             margin: 8px 0;
             box-sizing: border-box;
             border-radius: 24px;
+            background: transparent;
         }
         input[type=password] {
             width: 100%;
@@ -42,6 +43,7 @@
             margin: 8px 0;
             box-sizing: border-box;
             border-radius: 24px;
+            background: transparent;
         }
         input[type=submit]{
             background-color: #003333;
@@ -54,7 +56,10 @@
             border-color: red;
         }
         h1 {
-            color: #FF4900
+            text-shadow: 3px 1px red;
+        }
+        body{
+            background-image: url('./../../public/user/img/bg.jpg');
         }
 
     </style>
