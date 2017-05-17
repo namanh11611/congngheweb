@@ -50,8 +50,8 @@ html[xmlns] .slides { display: block; }
 .flex-control-nav li { margin: 0 6px; display: inline-block; zoom: 1; *display: inline;
 }
 .flex-control-paging li a { width: 10px; height: 10px; display: block; background: #5e626b; cursor: pointer; text-indent: 9999px; }
-.flex-control-paging li a:hover { background: #333; background: #f25c27 }
-.flex-control-paging li a.flex-active { background: #000; background: #f25c27; cursor: default; }
+.flex-control-paging li a:hover { background: #333; background: #64B5F6 }
+.flex-control-paging li a.flex-active { background: #000; background: #64B5F6; cursor: default; }
 .flex-control-thumbs { margin: 5px 0 0; position: static; overflow: hidden; }
 .flex-control-thumbs li { width: 25%; float: left; margin: 0; }
 .flex-control-thumbs img { width: 100%; display: block; opacity: .7; cursor: pointer; }
@@ -73,12 +73,12 @@ html[xmlns] .slides { display: block; }
 div.thumbnails { text-align: center; margin: 15px 0px; }
 div.thumbnails img { cursor: pointer; background-color: white; display: inline-block; border-top:5px solid #efefef }
 div.thumbnails img:hover { background-color: #eee; }
-div.thumbnails img.selected { background-color: #F25C27; border-top:5px solid #F25C27 }
+div.thumbnails img.selected { background-color: #64B5F6; border-top:5px solid #64B5F6 }
 .clearfix { float: none; clear: both; }
 /* Product Carousal */
 .caroufredsel_wrapper { position:relative }
-#prevproductcarousal { background:url(../img/carousalarrow.png) no-repeat scroll 8px center #F25C27; position:relative; font-size:24px; text-indent:-9999px; display:block; overflow:hidden; height:25px; width:25px; left:0; top:30px }
-#nextproductcarousal { background:url(../img/carousalarrow.png) no-repeat scroll -18px center #F25C27; position:relative; font-size:24px; text-indent:-9999px; display:block; overflow:hidden; height:25px; width:25px; right:0; top:30px }
+#prevproductcarousal { background:url(../img/carousalarrow.png) no-repeat scroll 8px center #64B5F6; position:relative; font-size:24px; text-indent:-9999px; display:block; overflow:hidden; height:25px; width:25px; left:0; top:30px }
+#nextproductcarousal { background:url(../img/carousalarrow.png) no-repeat scroll -18px center #64B5F6; position:relative; font-size:24px; text-indent:-9999px; display:block; overflow:hidden; height:25px; width:25px; right:0; top:30px }
 /* mainslider3 Carousal */
 #mainslider3 { width:1170px }
 #mainslider3 .item { width: 1170px; float: left; }
@@ -89,7 +89,7 @@ div.thumbnails img.selected { background-color: #F25C27; border-top:5px solid #F
 /* mainslider3 Carousal */
 #carouseindex4 { padding:50px 20px 5px }
 #carouseindex4 ul.slides li { border:1px solid #efefef; border-top:5px solid #efefef; padding:0px 20px 5px 20px; cursor:pointer }
-#carouseindex4 ul.slides li.flex-active-slide { border-top:5px solid #F25C27 }
+#carouseindex4 ul.slides li.flex-active-slide { border-top:5px solid #64B5F6 }
 #carouseindex4 .flex-direction-nav a  {top:70%}
 /* mainslider6 Carousal */
 
@@ -97,8 +97,8 @@ div.thumbnails img.selected { background-color: #F25C27; border-top:5px solid #F
 #nextmainslider6 { float: right; margin-right: 10px; }
 #pagermainslider6 { float: left; width: 100%; text-align: center; }
 #pagermainslider6 a { width: 15px; height: 15px; display: inline-block; background: #5e626b; cursor: pointer; text-indent: 9999px; margin:0 5px; overflow:hidden }
-#pagermainslider6 a:hover { background: #333; background: #f25c27 }
-#pagermainslider6 a.selected { background: #000; background: #f25c27; cursor: default; }
+#pagermainslider6 a:hover { background: #333; background: #64B5F6 }
+#pagermainslider6 a.selected { background: #000; background: #64B5F6; cursor: default; }
 #timermainslider6 { background-color: #999; height: 6px; width: 0px; }
 /* mainslider5 Carousal */
 

@@ -12,6 +12,7 @@
             <li class="span3">
                 <a class="prdocutname" href="{!! url('chi-tiet-san-pham',[$item->id,$item->alias]) !!}">{!! $item->name !!}</a>
                 <div class="thumbnail">
+<<<<<<< HEAD
 
 
                     <span class="sale tooltip-test">Sale</span>
@@ -19,6 +20,8 @@
 
                     <span class="sale tooltip-test">Sale</span>
 
+=======
+>>>>>>> 09d548bc2661041dbea9a97dfe80d37380bf0824
                     <a href="{!! url('chi-tiet-san-pham',[$item->id,$item->alias]) !!}"><img alt="" src="{!! asset('../resources/upload/'.$item->image) !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$item->id,$item->alias]) !!}" class="productcart">ADD TO CART</a>
@@ -43,6 +46,10 @@
         @foreach($product as $item)
             <li class="span3">
                 <a class="prdocutname" href="{!! url('chi-tiet-san-pham',[$item->id,$item->alias]) !!}">{!! $item->name !!}</a>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 09d548bc2661041dbea9a97dfe80d37380bf0824
                 <div class="thumbnail">
                     <a href="{!! url('chi-tiet-san-pham',[$item->id,$item->alias]) !!}"><img alt="" src="{!! asset('../resources/upload/'.$item->image) !!}"></a>
                     <div class="pricetag">

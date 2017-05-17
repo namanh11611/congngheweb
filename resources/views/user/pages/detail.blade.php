@@ -3,9 +3,7 @@
 @section('author', 'Viet Viet')
 @section('content')
 <style type="text/css">
-    a.cart {
-        background-color: #1E88E5;
-    }
+    
 </style>
 <div id="maincontainer">
 <section id="product">
@@ -168,7 +166,6 @@
             <li class="span3">
                 <a class="prdocutname" href="product.html">{!! $item_product_relate->name !!}</a>
                 <div class="thumbnail">
-                    <span class="sale tooltip-test">Sale</span>
                     <a href="#"><img alt="" src="{!! asset('../resources/upload/'.$item_product_relate->image) !!}"></a>
                     <div class="pricetag">
                         <span class="spiral"></span><a href="{!! url('mua-hang',[$product_detail->id,$product_detail->alias]) !!}" class="productcart">ADD TO CART</a>
