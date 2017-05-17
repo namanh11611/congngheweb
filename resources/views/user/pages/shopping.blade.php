@@ -72,27 +72,13 @@
         var total = qty*parseInt($("#price_" + id).html());
         $("#total_" + id).html(total);
         var sum_total = 0;
-        // for (var i = 0; i < $(".sum_total").length; i++)
-        // {
-        //     sum_total += $(".sum_total")[i].html();
-        // }
+
         @foreach ($content as $item)
             sum_total += parseInt($(".sum_total_" + '{!! $item->rowId !!}' ).html());
             // console.log(sum_total);
         @endforeach
         $("#sum_total").html(sum_total);
-       // $.ajax({
-       //     url: 'cap-nhat/' + rowId + '/' + qty,
-       //     type: 'GET',
-       //     cache: false,
-       //     data: {"_token":token, 
-       //          "id":rowId, "qty":qty},
-       //     success: function (data) {
-       //         if(data = "oke"){
-       //              // window.location.reload();
-       //         }
-       //     }
-       // });
+
     }
     
 </script>
