@@ -31,13 +31,14 @@ class WelcomeController extends Controller
     public function index()
     {
         //Auth::logout();
-        $product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->skip(0)->take(4)->get();
+        $product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->skip(0)->take(30)->get();
+        $lasted_product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->take(4)->get();
         //echo "Welcome";
         if(Auth::check()){
-            return view('user.pages.home',compact('product'))->with('userLogined',Auth::user());
+            return view('user.pages.home',compact('product','lasted_product'))->with('userLogined',Auth::user());
             View::share('userLogined',Auth::user());
         }
-        return view('user.pages.home',compact('product'));
+        return view('user.pages.home',compact('product','lasted_product'));
     }
     public function loaisanpham($id){
         $cate = DB::table('category')->select('parent_id')->where('id',$id)->first();
@@ -46,7 +47,7 @@ class WelcomeController extends Controller
             $menu_cate = DB::table('category')->select('id','name','alias')->where('parent_id',$id)->get();
             $name_cate = DB::table('category')->select('name')->where('id',$id)->first();
             $cateOfProduct = DB::table('category')->select('id')->where('parent_id',$id)->get();
-            $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$cateOfProduct[0]->id)->paginate(2);
+            $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$cateOfProduct[0]->id)->paginate(5);
 
             if (Auth::check()){
                 return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'))->with('userLogined',Auth::user());
