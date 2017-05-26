@@ -47,7 +47,6 @@ class WelcomeController extends Controller
             $lasted_product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->take(3)->get();
             $menu_cate = DB::table('category')->select('id','name','alias')->where('parent_id',$id)->get();
             $name_cate = DB::table('category')->select('name')->where('id',$id)->first();
-<<<<<<< HEAD
             $childOfParentCate = DB::table('category')->select('id')->where('parent_id',$id)->get();
             $count = 0;
             $object_merge;
@@ -67,10 +66,8 @@ class WelcomeController extends Controller
             // $product_cate = array_merge($product_cate, $product_cate1);
             // return $product_cate;
             // return gettype($product_cate);
-=======
             $cateOfProduct = DB::table('category')->select('id')->where('parent_id',$id)->get();
             $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$cateOfProduct[0]->id)->paginate(5);
->>>>>>> 716e288f74f4d9191e3a27d94bb214ca97191e24
 
             if (Auth::check()){
                 return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate','arrayOfObjectProduct'))->with('userLogined',Auth::user());

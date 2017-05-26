@@ -91,18 +91,20 @@ class UserController extends Controller
     public function getDelete($id){
         $user = Users::find($id);
         $member = Members::where('user_id','=',$user->id)->first();
-        //$customer = Customers::where('id','=',$member->customer_id)->first();
+        $customer = Customers::where('id','=',$member->customer_id)->first();
         
         if(Auth::check()){
             $admin = Auth::user();
             if($admin->level == 1){
-                //$customer->delete($customer->id);
+                
                 $member->delete($member->id);
+                $customer->delete($customer->id);
                 $user->delete($id);
             }else{
                 if($user->level == 3){
-                    //$customer->delete($customer->id);
+                    
                     $member->delete($member->id);
+                    $customer->delete($customer->id);
                     $user->delete($id);
                 }
                 return redirect()->route('admin.user.list')->with('adminLog',Auth::user());
