@@ -55,4 +55,16 @@ class OrderInController extends Controller
         }
         return redirect()->route('admin.orderin.list')->with(['flash_level'=>'success' ,'flash_message'=>'Success !! Complete Add Order Input']);
     }
+
+    public function getDelete(){
+
+    }
+
+    public function getEdit(){
+
+    }
+
+    public function postEdit(){
+
+    }
 }

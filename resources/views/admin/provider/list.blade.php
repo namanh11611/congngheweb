@@ -23,7 +23,7 @@
             <td>{!! $item_provider['address'] !!}</td>
             <td>{!! $item_provider['phone_number'] !!}</td>
             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="{!! URL::route('admin.provider.getDelete', $item_provider['id']) !!}"
-                                                                      onclick="return xacnhanxoa('Do You Want To Delete This User')"> Delete</a></td>
+                                                                      onclick="return xacnhanxoa('Do You Want To Delete This Provider?')"> Delete</a></td>
             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="{!! URL::route('admin.provider.getEdit', $item_provider['id']) !!}">Edit</a></td>
         </tr>
         @endforeach

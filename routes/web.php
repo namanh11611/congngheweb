@@ -66,9 +66,9 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function (){
         Route::get('list', ['as'=>'admin.orderin.list', 'uses'=>'OrderInController@getList']);
         Route::get('add', ['as'=>'admin.orderin.getAdd', 'uses'=>'OrderInController@getAdd']);
         Route::post('add', ['as'=>'admin.orderin.postAdd', 'uses'=>'OrderInController@postAdd']);
-        Route::get('delete/{id}', ['as'=>'admin.orderin.getDelete', 'uses'=>'UserController@getDelete']);
-        Route::get('edit/{id}', ['as'=>'admin.orderin.getEdit', 'uses'=>'UserController@getEdit']);
-        Route::post('edit/{id}', ['as'=>'admin.orderin.postEdit', 'uses'=>'UserController@postEdit']);
+        Route::get('delete/{id}', ['as'=>'admin.orderin.getDelete', 'uses'=>'OrderInController@getDelete']);
+        Route::get('edit/{id}', ['as'=>'admin.orderin.getEdit', 'uses'=>'OrderInController@getEdit']);
+        Route::post('edit/{id}', ['as'=>'admin.orderin.postEdit', 'uses'=>'OrderInController@postEdit']);
     });
 });
 
@@ -77,9 +77,9 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function (){
         Route::get('list', ['as'=>'admin.provider.list', 'uses'=>'ProviderController@getList']);
         Route::get('add', ['as'=>'admin.provider.getAdd', 'uses'=>'ProviderController@getAdd']);
         Route::post('add', ['as'=>'admin.provider.postAdd', 'uses'=>'ProviderController@postAdd']);
-        Route::get('delete/{id}', ['as'=>'admin.provider.getDelete', 'uses'=>'UserController@getDelete']);
-        Route::get('edit/{id}', ['as'=>'admin.provider.getEdit', 'uses'=>'UserController@getEdit']);
-        Route::post('edit/{id}', ['as'=>'admin.provider.postEdit', 'uses'=>'UserController@postEdit']);
+        Route::get('delete/{id}', ['as'=>'admin.provider.getDelete', 'uses'=>'ProviderController@getDelete']);
+        Route::get('edit/{id}', ['as'=>'admin.provider.getEdit', 'uses'=>'ProviderController@getEdit']);
+        Route::post('edit/{id}', ['as'=>'admin.provider.postEdit', 'uses'=>'ProviderController@postEdit']);
     });
 });
 

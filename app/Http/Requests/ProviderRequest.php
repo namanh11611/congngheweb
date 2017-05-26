@@ -25,7 +25,7 @@ class ProviderRequest extends FormRequest
     {
         return [
             'txtProviderName'       => 'required|unique:providers,name_provider',
-            'txtProviderAdress'     => 'required',
+            'txtProviderAddress'    => 'required',
             'txtPhoneNumber'        => 'required|unique:providers,phone_number'
         ];
     }
@@ -33,7 +33,7 @@ class ProviderRequest extends FormRequest
     public function messages(){
         return [
             'txtProviderName.required'          => "Please Enter Provider Name",
-            'txtProviderAdress.required'        => 'Please Enter Provider Adress',
+            'txtProviderAddress.required'       => 'Please Enter Provider Address',
             'txtPhoneNumber.required'           => 'Please Enter Phone Number',
             'txtPhoneNumber.unique'             => 'Phone Number Is Exists',
             'txtProviderName.unique'            => 'Provider Name Is Exists'

@@ -26,9 +26,9 @@
                                 }}">Register</a>
                                 </li>
                                 @endif
-                                <li><a class="shoppingcart" href="#">Shopping Cart</a>
+                                <li><a class="shoppingcart" href="{!! url('gio-hang') !!}">Shopping Cart</a>
                                 </li>
-                                <li><a class="checkout" href="#">CheckOut</a>
+                                <li><a class="checkout" href="{!! url('check-out') !!}">CheckOut</a>
                                 </li>
                             </ul>
                         </div>
