@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\CustomerRequest;
 use App\Customers;
+use App\Users;
+use App\Members;
+use Illuminate\Support\Facades\Auth;
 
 class CusController extends Controller
 {
@@ -45,6 +48,8 @@ class CusController extends Controller
 
     public function getDelete($id){
         $customer = Customers::find($id);
+        $member = Members::where('user_id','=',$customer->id)->first();
+        $member->delete($member->id);
         $customer->delete($id);
         return redirect()->route('admin.customer.list');
     }

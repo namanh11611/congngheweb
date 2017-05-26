@@ -65,6 +65,14 @@ class UserController extends Controller
         $user->level = $level;
 
         $user->save();
+
+        if($user->level == 1 || $user->level == 2){
+            if(Auth::check()){
+            return view('admin.user.add')->with('adminLog',Auth::user());
+        }
+            return view('admin.user.add');
+        }
+
         $customer->save();
 
         $newUser = Users::where('username','=',$username)->first();
@@ -82,9 +90,24 @@ class UserController extends Controller
 
     public function getDelete($id){
         $user = Users::find($id);
-        $user->delete($id);
+        $member = Members::where('user_id','=',$user->id)->first();
+        //$customer = Customers::where('id','=',$member->customer_id)->first();
+        
         if(Auth::check()){
-            return redirect()->route('admin.user.list')->with('adminLog',Auth::user());
+            $admin = Auth::user();
+            if($admin->level == 1){
+                //$customer->delete($customer->id);
+                $member->delete($member->id);
+                $user->delete($id);
+            }else{
+                if($user->level == 3){
+                    //$customer->delete($customer->id);
+                    $member->delete($member->id);
+                    $user->delete($id);
+                }
+                return redirect()->route('admin.user.list')->with('adminLog',Auth::user());
+            }
+            
         }
         return redirect()->route('admin.user.list');
     }
