@@ -14,6 +14,7 @@
             <tr align="center">
                 <th>ID</th>
                 <th>Name</th>
+                <th>Category Parent</th>
                 <th>Delete</th>
                 <th>Edit</th>
             </tr>
@@ -23,6 +24,7 @@
         @foreach ($data as $item)
         <?php $stt = $stt + 1 ?>
             <tr class="odd gradeX" align="center">
+                <td><?php echo $stt?></td>
                 <td>{!! $item["name"] !!}</td>
                 <td>
                  @if ($item["parent_id"] == 0)
