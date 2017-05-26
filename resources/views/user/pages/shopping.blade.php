@@ -48,9 +48,8 @@
             <div class="pull-right">
                 <div class="span4 pull-right">
                     <table class="table table-striped table-bordered ">
-                       
                         <tr>
-                            <td><span class="extra bold totalamout">Total :</span></td>
+                            <td><span class="extra bold totalamout">Total</span></td>
                             <td><span class="bold totalamout" id="sum_total">{!! $total1 !!}</span></td>
                         </tr>
                     </table>
