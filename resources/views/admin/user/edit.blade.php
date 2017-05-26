@@ -47,7 +47,7 @@
                     >SuperAdmin
                 </label>
                 <label class="radio-inline">
-                    <input name="rdoLevel" value="3" type="radio"
+                    <input name="rdoLevel" value="2" type="radio"
                     @if($data['level'] == 2)
                      checked="checked" 
                      @endif

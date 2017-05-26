@@ -42,16 +42,34 @@ class WelcomeController extends Controller
     public function loaisanpham($id){
         $cate = DB::table('category')->select('parent_id')->where('id',$id)->first();
         if($cate->parent_id == 0){
+            $arrayOfObjectProduct = array();
             $lasted_product = DB::table('products')->select('id','name','image','price','alias')->orderBy('id','DESC')->take(3)->get();
             $menu_cate = DB::table('category')->select('id','name','alias')->where('parent_id',$id)->get();
             $name_cate = DB::table('category')->select('name')->where('id',$id)->first();
-            $cateOfProduct = DB::table('category')->select('id')->where('parent_id',$id)->get();
-            $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$cateOfProduct[0]->id)->paginate(2);
+            $childOfParentCate = DB::table('category')->select('id')->where('parent_id',$id)->get();
+            $count = 0;
+            $object_merge;
+            foreach ($childOfParentCate as $var) {
+                if($count == 0){
+                    $object_merge = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$var->id)->paginate(2);
+                }else{
+                    $obj = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$var->id)->paginate(2);
+                    $object_merge = (object) array_merge((array) $object_merge, (array) $obj);
+                }
+                $count++;
+            }
+
+            $product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$childOfParentCate[0]->id)->paginate(2);
+
+            // $product_cate1 = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$childOfParentCate[1]->id)->paginate(2);
+            // $product_cate = array_merge($product_cate, $product_cate1);
+            // return $product_cate;
+            // return gettype($product_cate);
 
             if (Auth::check()){
-                return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'))->with('userLogined',Auth::user());
+                return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate','arrayOfObjectProduct'))->with('userLogined',Auth::user());
             }
-                return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate'));
+                return view('user.pages.cate',compact('product_cate','menu_cate','lasted_product','name_cate','arrayOfObjectProduct'));
         }
     	$product_cate = DB::table('products')->select('id','name','image','price','alias','cate_id')->where('cate_id',$id)->get();
         if(count($product_cate) == 0){
